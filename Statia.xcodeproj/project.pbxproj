@@ -21,6 +21,14 @@
 		032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */; };
 		038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038AB177209A64D1007C79AE /* HomeViewController.swift */; };
 		038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AB178209A64D1007C79AE /* HomeViewController.xib */; };
+		7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995DFDD20BDF37900867930 /* AppHomeViewController.swift */; };
+		7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7995DFDE20BDF37900867930 /* AppHomeViewController.xib */; };
+		79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */; };
+		79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */; };
+		79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61EB20C2055B00665B3C /* PlayerCreateViewController.swift */; };
+		79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA61EC20C2055B00665B3C /* PlayerCreateViewController.xib */; };
+		79AA61F120C2059100665B3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61F020C2059100665B3C /* Player.swift */; };
+		79AA61F320C2061200665B3C /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61F220C2061200665B3C /* Poste.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,14 @@
 		032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellPlayer.xib; sourceTree = "<group>"; };
 		038AB177209A64D1007C79AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		038AB178209A64D1007C79AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		7995DFDD20BDF37900867930 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
+		7995DFDE20BDF37900867930 /* AppHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHomeViewController.xib; sourceTree = "<group>"; };
+		79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectifViewController.swift; sourceTree = "<group>"; };
+		79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectifViewController.xib; sourceTree = "<group>"; };
+		79AA61EB20C2055B00665B3C /* PlayerCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreateViewController.swift; sourceTree = "<group>"; };
+		79AA61EC20C2055B00665B3C /* PlayerCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCreateViewController.xib; sourceTree = "<group>"; };
+		79AA61F020C2059100665B3C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		79AA61F220C2061200665B3C /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,8 @@
 		0315FABA2091265700CA5DB0 /* Statia */ = {
 			isa = PBXGroup;
 			children = (
+				79AA61EF20C2056300665B3C /* Models */,
+				79AA61EA20C2054200665B3C /* Players */,
 				032910D820A1DD92000C93C7 /* assets */,
 				0315FABB2091265700CA5DB0 /* AppDelegate.swift */,
 				0315FABD2091265700CA5DB0 /* ViewController.swift */,
@@ -86,6 +104,10 @@
 				032910DF20A1F5B9000C93C7 /* TableViewPlayersController.xib */,
 				032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */,
 				032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */,
+				7995DFDD20BDF37900867930 /* AppHomeViewController.swift */,
+				7995DFDE20BDF37900867930 /* AppHomeViewController.xib */,
+				79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */,
+				79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */,
 			);
 			path = Statia;
 			sourceTree = "<group>";
@@ -97,6 +119,24 @@
 				032910D920A1E29F000C93C7 /* background_blue.jpg */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		79AA61EA20C2054200665B3C /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				79AA61EB20C2055B00665B3C /* PlayerCreateViewController.swift */,
+				79AA61EC20C2055B00665B3C /* PlayerCreateViewController.xib */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		79AA61EF20C2056300665B3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79AA61F020C2059100665B3C /* Player.swift */,
+				79AA61F220C2061200665B3C /* Poste.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,13 +198,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */,
 				032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */,
 				0315FAC92091265800CA5DB0 /* LaunchScreen.storyboard in Resources */,
 				032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */,
 				032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */,
 				0315FAC62091265800CA5DB0 /* Assets.xcassets in Resources */,
 				032910E120A1F5B9000C93C7 /* TableViewPlayersController.xib in Resources */,
+				79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */,
 				0315FAC12091265700CA5DB0 /* Main.storyboard in Resources */,
+				7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */,
 				038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,10 +220,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				032910E420A3A287000C93C7 /* TableViewCellPlayer.swift in Sources */,
+				7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */,
+				79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */,
+				79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */,
 				0315FABE2091265700CA5DB0 /* ViewController.swift in Sources */,
 				0315FABC2091265700CA5DB0 /* AppDelegate.swift in Sources */,
 				032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */,
 				0315FAC42091265800CA5DB0 /* Statia.xcdatamodeld in Sources */,
+				79AA61F320C2061200665B3C /* Poste.swift in Sources */,
+				79AA61F120C2059100665B3C /* Player.swift in Sources */,
 				038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,6 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.tableView.register(UINib(nibName:"TableViewCellPlayer",bundle:nil), forCellReuseIdentifier: "reuseCellIdentifier")
         
         tableView.dataSource = self
@@ -22,6 +21,10 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
 
     override func didReceiveMemoryWarning() {

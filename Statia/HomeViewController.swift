@@ -10,23 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var logoImg: UIImageView!
     @IBOutlet var button: UIButton!
     @IBAction func connection(_ sender: UIButton) {
         let tableViewPlayersController = TableViewPlayersController(nibName: "TableViewPlayersController", bundle: nil)
-        self.navigationController?.pushViewController(tableViewPlayersController, animated: true)
+        let homeView = AppHomeViewController(nibName: "AppHomeViewController", bundle: nil)
+        self.navigationController?.pushViewController(homeView, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let margins = view.layoutMarginsGuide
         // Do any additional setup after loading the view.
         button.backgroundColor = .clear
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.gray.cgColor
         button.layer.backgroundColor = UIColor.gray.cgColor
-        
+        button.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         self.view.addBackground()
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
+
         
     }
 
