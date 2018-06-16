@@ -13,6 +13,28 @@
 		0315FAC42091265800CA5DB0 /* Statia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0315FAC22091265800CA5DB0 /* Statia.xcdatamodeld */; };
 		0315FAC62091265800CA5DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0315FAC52091265800CA5DB0 /* Assets.xcassets */; };
 		0315FAC92091265800CA5DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0315FAC72091265800CA5DB0 /* LaunchScreen.storyboard */; };
+		032156B720CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156B520CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift */; };
+		032156B820CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156B620CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib */; };
+		032156BB20CD62A900441586 /* TableViewStatsPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156B920CD62A900441586 /* TableViewStatsPlayerController.swift */; };
+		032156BC20CD62A900441586 /* TableViewStatsPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156BA20CD62A900441586 /* TableViewStatsPlayerController.xib */; };
+		032156BF20CDC8F600441586 /* ResponsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156BD20CDC8F600441586 /* ResponsibleTableViewCell.swift */; };
+		032156C020CDC8F600441586 /* ResponsibleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156BE20CDC8F600441586 /* ResponsibleTableViewCell.xib */; };
+		032156C320CDD0B000441586 /* PlayTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156C120CDD0B000441586 /* PlayTimeTableViewCell.swift */; };
+		032156C420CDD0B000441586 /* PlayTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156C220CDD0B000441586 /* PlayTimeTableViewCell.xib */; };
+		032156C720CF1BC800441586 /* SeasonResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156C520CF1BC800441586 /* SeasonResultsTableViewCell.swift */; };
+		032156C820CF1BC800441586 /* SeasonResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156C620CF1BC800441586 /* SeasonResultsTableViewCell.xib */; };
+		032156CB20CF24C200441586 /* ButsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156C920CF24C200441586 /* ButsTableViewCell.swift */; };
+		032156CC20CF24C200441586 /* ButsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156CA20CF24C200441586 /* ButsTableViewCell.xib */; };
+		032156CF20D0653400441586 /* LastPassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156CD20D0653300441586 /* LastPassTableViewCell.swift */; };
+		032156D020D0653400441586 /* LastPassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156CE20D0653400441586 /* LastPassTableViewCell.xib */; };
+		032156D720D313A100441586 /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156D520D313A100441586 /* CardsTableViewCell.swift */; };
+		032156D820D313A100441586 /* CardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156D620D313A100441586 /* CardsTableViewCell.xib */; };
+		032156DF20D435D300441586 /* red_card.png in Resources */ = {isa = PBXBuildFile; fileRef = 032156DD20D435D200441586 /* red_card.png */; };
+		032156E020D435D300441586 /* yellow_card.png in Resources */ = {isa = PBXBuildFile; fileRef = 032156DE20D435D200441586 /* yellow_card.png */; };
+		032156E320D45D0C00441586 /* HealthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156E120D45D0C00441586 /* HealthTableViewCell.swift */; };
+		032156E420D45D0C00441586 /* HealthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156E220D45D0C00441586 /* HealthTableViewCell.xib */; };
+		032156E720D4682600441586 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032156E520D4682600441586 /* GoalTableViewCell.swift */; };
+		032156E820D4682600441586 /* GoalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156E620D4682600441586 /* GoalTableViewCell.xib */; };
 		032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032910D920A1E29F000C93C7 /* background_blue.jpg */; };
 		032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */ = {isa = PBXBuildFile; fileRef = 032910DB20A1F1EC000C93C7 /* logo_Statia.png */; };
 		032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */; };
@@ -21,6 +43,8 @@
 		032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */; };
 		038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038AB177209A64D1007C79AE /* HomeViewController.swift */; };
 		038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AB178209A64D1007C79AE /* HomeViewController.xib */; };
+		03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */; };
+		03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */; };
 		7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995DFDD20BDF37900867930 /* AppHomeViewController.swift */; };
 		7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7995DFDE20BDF37900867930 /* AppHomeViewController.xib */; };
 		79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */; };
@@ -40,6 +64,28 @@
 		0315FAC52091265800CA5DB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0315FAC82091265800CA5DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0315FACA2091265800CA5DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		032156B520CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInfoPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		032156B620CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsInfoPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		032156B920CD62A900441586 /* TableViewStatsPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewStatsPlayerController.swift; sourceTree = "<group>"; };
+		032156BA20CD62A900441586 /* TableViewStatsPlayerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewStatsPlayerController.xib; sourceTree = "<group>"; };
+		032156BD20CDC8F600441586 /* ResponsibleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsibleTableViewCell.swift; sourceTree = "<group>"; };
+		032156BE20CDC8F600441586 /* ResponsibleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponsibleTableViewCell.xib; sourceTree = "<group>"; };
+		032156C120CDD0B000441586 /* PlayTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTimeTableViewCell.swift; sourceTree = "<group>"; };
+		032156C220CDD0B000441586 /* PlayTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayTimeTableViewCell.xib; sourceTree = "<group>"; };
+		032156C520CF1BC800441586 /* SeasonResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonResultsTableViewCell.swift; sourceTree = "<group>"; };
+		032156C620CF1BC800441586 /* SeasonResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonResultsTableViewCell.xib; sourceTree = "<group>"; };
+		032156C920CF24C200441586 /* ButsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButsTableViewCell.swift; sourceTree = "<group>"; };
+		032156CA20CF24C200441586 /* ButsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButsTableViewCell.xib; sourceTree = "<group>"; };
+		032156CD20D0653300441586 /* LastPassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPassTableViewCell.swift; sourceTree = "<group>"; };
+		032156CE20D0653400441586 /* LastPassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastPassTableViewCell.xib; sourceTree = "<group>"; };
+		032156D520D313A100441586 /* CardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
+		032156D620D313A100441586 /* CardsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsTableViewCell.xib; sourceTree = "<group>"; };
+		032156DD20D435D200441586 /* red_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_card.png; sourceTree = "<group>"; };
+		032156DE20D435D200441586 /* yellow_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_card.png; sourceTree = "<group>"; };
+		032156E120D45D0C00441586 /* HealthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTableViewCell.swift; sourceTree = "<group>"; };
+		032156E220D45D0C00441586 /* HealthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthTableViewCell.xib; sourceTree = "<group>"; };
+		032156E520D4682600441586 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
+		032156E620D4682600441586 /* GoalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalTableViewCell.xib; sourceTree = "<group>"; };
 		032910D920A1E29F000C93C7 /* background_blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_blue.jpg; sourceTree = "<group>"; };
 		032910DB20A1F1EC000C93C7 /* logo_Statia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_Statia.png; sourceTree = "<group>"; };
 		032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPlayersController.swift; sourceTree = "<group>"; };
@@ -48,6 +94,8 @@
 		032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellPlayer.xib; sourceTree = "<group>"; };
 		038AB177209A64D1007C79AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		038AB178209A64D1007C79AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsBarPlayerTableViewCell.xib; sourceTree = "<group>"; };
 		7995DFDD20BDF37900867930 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		7995DFDE20BDF37900867930 /* AppHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHomeViewController.xib; sourceTree = "<group>"; };
 		79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectifViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +136,7 @@
 		0315FABA2091265700CA5DB0 /* Statia */ = {
 			isa = PBXGroup;
 			children = (
+				032156B320CBCC8800441586 /* Cells */,
 				79AA61EF20C2056300665B3C /* Models */,
 				79AA61EA20C2054200665B3C /* Players */,
 				032910D820A1DD92000C93C7 /* assets */,
@@ -108,13 +157,52 @@
 				7995DFDE20BDF37900867930 /* AppHomeViewController.xib */,
 				79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */,
 				79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */,
+				032156B920CD62A900441586 /* TableViewStatsPlayerController.swift */,
+				032156BA20CD62A900441586 /* TableViewStatsPlayerController.xib */,
 			);
 			path = Statia;
+			sourceTree = "<group>";
+		};
+		032156B320CBCC8800441586 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				032156B420CBCC9500441586 /* StatsPlayer */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		032156B420CBCC9500441586 /* StatsPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */,
+				03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */,
+				032156B520CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift */,
+				032156B620CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib */,
+				032156BD20CDC8F600441586 /* ResponsibleTableViewCell.swift */,
+				032156BE20CDC8F600441586 /* ResponsibleTableViewCell.xib */,
+				032156C120CDD0B000441586 /* PlayTimeTableViewCell.swift */,
+				032156C220CDD0B000441586 /* PlayTimeTableViewCell.xib */,
+				032156C520CF1BC800441586 /* SeasonResultsTableViewCell.swift */,
+				032156C620CF1BC800441586 /* SeasonResultsTableViewCell.xib */,
+				032156C920CF24C200441586 /* ButsTableViewCell.swift */,
+				032156CA20CF24C200441586 /* ButsTableViewCell.xib */,
+				032156CD20D0653300441586 /* LastPassTableViewCell.swift */,
+				032156CE20D0653400441586 /* LastPassTableViewCell.xib */,
+				032156D520D313A100441586 /* CardsTableViewCell.swift */,
+				032156D620D313A100441586 /* CardsTableViewCell.xib */,
+				032156E120D45D0C00441586 /* HealthTableViewCell.swift */,
+				032156E220D45D0C00441586 /* HealthTableViewCell.xib */,
+				032156E520D4682600441586 /* GoalTableViewCell.swift */,
+				032156E620D4682600441586 /* GoalTableViewCell.xib */,
+			);
+			path = StatsPlayer;
 			sourceTree = "<group>";
 		};
 		032910D820A1DD92000C93C7 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				032156DD20D435D200441586 /* red_card.png */,
+				032156DE20D435D200441586 /* yellow_card.png */,
 				032910DB20A1F1EC000C93C7 /* logo_Statia.png */,
 				032910D920A1E29F000C93C7 /* background_blue.jpg */,
 			);
@@ -166,7 +254,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Statia;
 				TargetAttributes = {
 					0315FAB72091265700CA5DB0 = {
@@ -198,17 +286,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */,
 				79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */,
+				032156C420CDD0B000441586 /* PlayTimeTableViewCell.xib in Resources */,
+				032156BC20CD62A900441586 /* TableViewStatsPlayerController.xib in Resources */,
 				032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */,
 				0315FAC92091265800CA5DB0 /* LaunchScreen.storyboard in Resources */,
+				032156E420D45D0C00441586 /* HealthTableViewCell.xib in Resources */,
+				032156D020D0653400441586 /* LastPassTableViewCell.xib in Resources */,
+				032156C820CF1BC800441586 /* SeasonResultsTableViewCell.xib in Resources */,
+				032156C020CDC8F600441586 /* ResponsibleTableViewCell.xib in Resources */,
 				032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */,
+				032156CC20CF24C200441586 /* ButsTableViewCell.xib in Resources */,
+				032156D820D313A100441586 /* CardsTableViewCell.xib in Resources */,
 				032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */,
 				0315FAC62091265800CA5DB0 /* Assets.xcassets in Resources */,
 				032910E120A1F5B9000C93C7 /* TableViewPlayersController.xib in Resources */,
 				79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */,
 				0315FAC12091265700CA5DB0 /* Main.storyboard in Resources */,
 				7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */,
+				032156B820CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib in Resources */,
+				032156E820D4682600441586 /* GoalTableViewCell.xib in Resources */,
+				032156DF20D435D300441586 /* red_card.png in Resources */,
 				038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */,
+				032156E020D435D300441586 /* yellow_card.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,15 +322,26 @@
 			files = (
 				032910E420A3A287000C93C7 /* TableViewCellPlayer.swift in Sources */,
 				7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */,
+				032156E320D45D0C00441586 /* HealthTableViewCell.swift in Sources */,
+				032156C720CF1BC800441586 /* SeasonResultsTableViewCell.swift in Sources */,
+				032156BF20CDC8F600441586 /* ResponsibleTableViewCell.swift in Sources */,
+				032156B720CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift in Sources */,
 				79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */,
 				79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */,
 				0315FABE2091265700CA5DB0 /* ViewController.swift in Sources */,
 				0315FABC2091265700CA5DB0 /* AppDelegate.swift in Sources */,
 				032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */,
 				0315FAC42091265800CA5DB0 /* Statia.xcdatamodeld in Sources */,
+				032156D720D313A100441586 /* CardsTableViewCell.swift in Sources */,
 				79AA61F320C2061200665B3C /* Poste.swift in Sources */,
+				032156BB20CD62A900441586 /* TableViewStatsPlayerController.swift in Sources */,
 				79AA61F120C2059100665B3C /* Player.swift in Sources */,
+				032156E720D4682600441586 /* GoalTableViewCell.swift in Sources */,
 				038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */,
+				032156CB20CF24C200441586 /* ButsTableViewCell.swift in Sources */,
+				032156C320CDD0B000441586 /* PlayTimeTableViewCell.swift in Sources */,
+				032156CF20D0653400441586 /* LastPassTableViewCell.swift in Sources */,
+				03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +381,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -276,6 +389,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -326,6 +440,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -333,6 +448,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

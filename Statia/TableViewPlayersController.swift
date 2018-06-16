@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewPlayersController: UIViewController, UITableViewDataSource , UITableViewDelegate {
-
+//    typealias Stat = (string,int,)
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -49,6 +49,12 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCellIdentifier", for: indexPath)
+//        switch cell {
+//        case let accessoryCell as TableViewCellPlayer:
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
         if let accessoryCell = cell as? TableViewCellPlayer {
             if indexPath.item % 2 == 0 {
                 accessoryCell.backgroundColor = UIColor.lightGray
@@ -66,6 +72,11 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
             
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tableViewPlayersController = TableViewStatsPlayerController(nibName: "TableViewStatsPlayerController", bundle: nil)
+        self.navigationController?.pushViewController(tableViewPlayersController, animated: true)
     }
     
     func showAndHideInfoPlayer() {
