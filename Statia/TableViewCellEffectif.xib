@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="TableViewCellEffectif" customModule="Statia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="447" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer-player.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-z5-OwQ">
+                        <rect key="frame" x="16" y="25.5" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="BRE-aM-62r"/>
+                            <constraint firstAttribute="height" constant="100" id="nqI-0u-7fi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-5I-SeK">
+                        <rect key="frame" x="121" y="16" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS3-Ox-QKZ">
+                        <rect key="frame" x="121" y="113" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-Sv-bIi">
+                        <rect key="frame" x="121" y="64" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yQi-5I-SeK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="DaA-Ra-Fnr"/>
+                    <constraint firstItem="yQi-5I-SeK" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="FNz-sN-gNK"/>
+                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MjD-9X-cNQ"/>
+                    <constraint firstItem="vbv-z5-OwQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="Owg-0k-a8K"/>
+                    <constraint firstItem="vbv-z5-OwQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cv7-rE-ecY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pS3-Ox-QKZ" secondAttribute="bottom" constant="5" id="dZG-73-nSF"/>
+                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uSD-kA-Aci"/>
+                    <constraint firstItem="pS3-Ox-QKZ" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uXS-JW-Mws"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelNom" destination="yQi-5I-SeK" id="1HG-CK-tfq"/>
+                <outlet property="labelPoste" destination="YgS-Sv-bIi" id="Thp-4y-eLN"/>
+                <outlet property="labelPrenom" destination="pS3-Ox-QKZ" id="RwZ-wK-tOm"/>
+                <outlet property="photoProfil" destination="vbv-z5-OwQ" id="2iV-G0-Ss7"/>
+            </connections>
+            <point key="canvasLocation" x="97.5" y="54"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="soccer-player.png" width="32" height="32"/>
+    </resources>
+</document>
