@@ -9,24 +9,35 @@
 import UIKit
 
 class AppHomeViewController: UITabBarController   {
-
+    @IBOutlet var tabbar: UITabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
         // Do any additional setup after loading the view.
         
-        let tableview = TableViewPlayersController()
-        tableview.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
        
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let tableview = TableViewPlayersController()
+        tableview.title = "First"
+        tableview.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
+        
+        
         let effectif = EffectifViewController()
-        effectif.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 1)
+        effectif.title = "Effectif"
+        effectif.tabBarItem = UITabBarItem(title: "Effectif", image: nil, tag: 1)
+        
+        let calendrier = CalendrierViewController()
+        calendrier.title = "Calendrier"
+        calendrier.tabBarItem = UITabBarItem(title: "Calendrier", image: UIImage(named: "calendrier.png"), tag: 2)
 
         
-        
-        viewControllers = [tableview,effectif]
-        
+        let controllers = [tableview,effectif,calendrier]
+        self.viewControllers = controllers
         
     }
     

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendrierCreateViewController" customModule="Statia" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAmical" destination="mcJ-Je-cGe" id="yFg-WM-ghd"/>
+                <outlet property="btnChampionnat" destination="YbD-Ao-jgy" id="Z7n-oV-OBq"/>
+                <outlet property="btnCoupe" destination="S02-44-WVG" id="6Rq-OQ-hHv"/>
+                <outlet property="switchLieu" destination="3gb-oD-ftc" id="tRq-Bk-fqG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adversaire" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJz-sH-1hP">
+                    <rect key="frame" x="0.0" y="170" width="375" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-pu-YHH">
+                    <rect key="frame" x="0.0" y="240" width="375" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gb-oD-ftc">
+                    <rect key="frame" x="163" y="315" width="51" height="31"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domicile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-EE-HDz">
+                    <rect key="frame" x="50" y="320" width="66" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exterieur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr6-BE-8DX">
+                    <rect key="frame" x="256.5" y="320" width="68.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S02-44-WVG">
+                    <rect key="frame" x="60" y="401" width="45" height="30"/>
+                    <state key="normal" title="Coupe">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbD-Ao-jgy">
+                    <rect key="frame" x="141" y="401" width="92" height="30"/>
+                    <state key="normal" title="Championnat">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcJ-Je-cGe">
+                    <rect key="frame" x="264" y="401" width="46" height="30"/>
+                    <state key="normal" title="Amical">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gQn-EE-HDz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="1SH-Si-6tz"/>
+                <constraint firstItem="XuU-pu-YHH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3l5-BX-wLM"/>
+                <constraint firstItem="3gb-oD-ftc" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="45" id="4CN-94-1a7"/>
+                <constraint firstItem="YbD-Ao-jgy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Fv-zY-G1w"/>
+                <constraint firstItem="3gb-oD-ftc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="83X-Qt-vtY"/>
+                <constraint firstItem="YbD-Ao-jgy" firstAttribute="top" secondItem="3gb-oD-ftc" secondAttribute="bottom" constant="55" id="8ce-D2-1Vj"/>
+                <constraint firstItem="lJz-sH-1hP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="Avm-nc-fWz"/>
+                <constraint firstItem="Qr6-BE-8DX" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Bpk-7R-ByB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qr6-BE-8DX" secondAttribute="trailing" constant="50" id="Dwu-sl-wSA"/>
+                <constraint firstItem="S02-44-WVG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="EQg-eH-ZDQ"/>
+                <constraint firstItem="XuU-pu-YHH" firstAttribute="top" secondItem="lJz-sH-1hP" secondAttribute="bottom" constant="40" id="M6Z-Z6-MGL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lJz-sH-1hP" secondAttribute="trailing" id="SHV-Xf-n0W"/>
+                <constraint firstItem="gQn-EE-HDz" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Xfr-le-6zr"/>
+                <constraint firstItem="mcJ-Je-cGe" firstAttribute="top" secondItem="Qr6-BE-8DX" secondAttribute="bottom" constant="60" id="b5w-YL-DXK"/>
+                <constraint firstItem="lJz-sH-1hP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVu-qV-fYY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mcJ-Je-cGe" secondAttribute="trailing" constant="65" id="gGE-gG-LVx"/>
+                <constraint firstItem="XuU-pu-YHH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mTw-hc-pGk"/>
+                <constraint firstItem="S02-44-WVG" firstAttribute="top" secondItem="gQn-EE-HDz" secondAttribute="bottom" constant="60" id="oup-4i-eVS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
