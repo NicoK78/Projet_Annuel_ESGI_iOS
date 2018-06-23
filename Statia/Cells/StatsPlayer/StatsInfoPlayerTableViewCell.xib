@@ -56,10 +56,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-wZ-0ZR">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-wZ-0ZR">
                         <rect key="frame" x="132" y="89" width="57" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Modifier"/>
+                        <connections>
+                            <action selector="modifyInfos:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9wx-L5-50D"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G/D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmY-TK-UTo">
                         <rect key="frame" x="279" y="33" width="25" height="17"/>
@@ -77,6 +79,7 @@
                 <constraints>
                     <constraint firstItem="8ld-bb-sDh" firstAttribute="top" secondItem="Qia-Rq-A3K" secondAttribute="bottom" constant="5" id="9QJ-fX-x7O"/>
                     <constraint firstItem="igJ-Pk-kqh" firstAttribute="top" secondItem="ZmY-TK-UTo" secondAttribute="bottom" constant="27" id="9tc-FW-27m"/>
+                    <constraint firstAttribute="bottom" secondItem="s9M-wZ-0ZR" secondAttribute="bottom" id="Bfi-V1-2hS"/>
                     <constraint firstItem="tsT-vD-ax8" firstAttribute="top" secondItem="jng-bf-hhn" secondAttribute="bottom" constant="5" id="EGI-Ko-faX"/>
                     <constraint firstItem="Qia-Rq-A3K" firstAttribute="leading" secondItem="ATT-O4-1ye" secondAttribute="trailing" constant="2" id="GMP-er-s9K"/>
                     <constraint firstItem="ATT-O4-1ye" firstAttribute="centerY" secondItem="8ld-bb-sDh" secondAttribute="centerY" id="ICQ-af-eUe"/>
@@ -86,6 +89,7 @@
                     <constraint firstItem="0Ru-7m-vIX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hbE-we-aKG"/>
                     <constraint firstItem="jng-bf-hhn" firstAttribute="leading" secondItem="ATT-O4-1ye" secondAttribute="trailing" constant="2" id="jnb-Q4-mJV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="0Ru-7m-vIX" secondAttribute="trailing" id="lc4-re-txY"/>
+                    <constraint firstItem="s9M-wZ-0ZR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="n6E-0o-THY"/>
                     <constraint firstItem="jng-bf-hhn" firstAttribute="top" secondItem="8ld-bb-sDh" secondAttribute="bottom" constant="5" id="pda-cp-542"/>
                     <constraint firstItem="tsT-vD-ax8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="sKT-Jt-vtJ"/>
                     <constraint firstItem="igJ-Pk-kqh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="tEX-Ta-vzC"/>
@@ -95,6 +99,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnModify" destination="s9M-wZ-0ZR" id="hob-V8-zI5"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -1,21 +1,21 @@
 //
-//  StatsInfoPlayerTableViewCell.swift
+//  ModifyInfoPlayerTableViewCell.swift
 //  Statia
 //
-//  Created by Nico on 09/06/2018.
+//  Created by Nico on 17/06/2018.
 //  Copyright © 2018 Statia. All rights reserved.
 //
 
 import UIKit
 
-protocol StatsInfosDelegate: AnyObject {
-    func modifyInfos(cell: StatsInfoPlayerTableViewCell)
+protocol ModifyInfosDelegate: AnyObject {
+    func modifyInfos(cell: ModifyInfoPlayerTableViewCell)
 }
-class StatsInfoPlayerTableViewCell: UITableViewCell {
+class ModifyInfoPlayerTableViewCell: UITableViewCell {
 
     @IBOutlet var btnModify: UIButton!
     
-    weak var delegate: StatsInfosDelegate?
+    weak var delegate: ModifyInfosDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +29,6 @@ class StatsInfoPlayerTableViewCell: UITableViewCell {
     }
     
     @IBAction func modifyInfos(_ sender: Any) {
-        print("CLICK")
         delegate?.modifyInfos(cell: self)
     }
 }

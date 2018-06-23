@@ -11,10 +11,15 @@ import UIKit
 class TableViewPlayersController: UIViewController, UITableViewDataSource , UITableViewDelegate {
 //    typealias Stat = (string,int,)
     @IBOutlet var tableView: UITableView!
+    
+    var selectedPath: IndexPath? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName:"TableViewCellPlayer",bundle:nil), forCellReuseIdentifier: "reuseCellIdentifier")
+        self.tableView.register(UINib(nibName:"PlayerDeployTableViewCell",bundle:nil), forCellReuseIdentifier: "playerDeployCellIdentifier")
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -48,17 +53,23 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCellIdentifier", for: indexPath)
-//        switch cell {
-//        case let accessoryCell as TableViewCellPlayer:
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
-        if let accessoryCell = cell as? TableViewCellPlayer {
-            if indexPath.item % 2 == 0 {
-                accessoryCell.backgroundColor = UIColor.lightGray
+        let cell: UITableViewCell
+
+        if selectedPath == indexPath {
+            cell = tableView.dequeueReusableCell(withIdentifier: "playerDeployCellIdentifier", for: indexPath)
+            if let accessoryCell = cell as? PlayerDeployTableViewCell {
+                if indexPath.item % 2 == 0 {
+                    accessoryCell.backgroundColor = UIColor.lightGray
+                }
             }
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "reuseCellIdentifier", for: indexPath)
+            if let accessoryCell = cell as? TableViewCellPlayer {
+                if indexPath.item % 2 == 0 {
+                    accessoryCell.backgroundColor = UIColor.lightGray
+                }
+
+            //accessoryCell.showAndHide.actio
 //            accessoryCell.showAndHide.titleLabel?.text = "N° \(indexPath)"
 //            accessoryCell.showAndHide.addTarget(self, action: "showAndHideInfoPlayer:", for: .touchUpInside)
 
@@ -69,7 +80,7 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
 //                let aTask: Task = self.todos[indexPath.item].tasks?.allObjects[0] as! Task
 //                accessoryCell.labelSousTitre.text = aTask.name
 //            }
-            
+            }
         }
         return cell
     }
@@ -77,6 +88,29 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tableViewPlayersController = TableViewStatsPlayerController(nibName: "TableViewStatsPlayerController", bundle: nil)
         self.navigationController?.pushViewController(tableViewPlayersController, animated: true)
+        
+//        let tmp: IndexPath
+//        if selectedPath == indexPath {
+//            selectedPath = nil
+//        } else {
+//            if selectedPath != nil {
+//                tmp = selectedPath!
+//                selectedPath = indexPath
+//
+//                tableView.reloadRows(at: [tmp], with: UITableViewRowAnimation.none)
+//            } else {
+//                selectedPath = indexPath
+//            }
+//        }
+//        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if selectedPath == indexPath {
+            return 150
+        } else {
+            return 98
+        }
     }
     
     func showAndHideInfoPlayer() {

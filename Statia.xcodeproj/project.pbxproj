@@ -45,6 +45,26 @@
 		038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AB178209A64D1007C79AE /* HomeViewController.xib */; };
 		03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */; };
 		03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */; };
+		03D2F9A620D6CA4D00258DDA /* PlayerDeployTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9A420D6CA4D00258DDA /* PlayerDeployTableViewCell.swift */; };
+		03D2F9A720D6CA4D00258DDA /* PlayerDeployTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9A520D6CA4D00258DDA /* PlayerDeployTableViewCell.xib */; };
+		03D2F9AA20D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9A820D6DB8900258DDA /* ModifyInfoPlayerTableViewCell.swift */; };
+		03D2F9AB20D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9A920D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.xib */; };
+		03D2F9AE20D6DDBC00258DDA /* soccer-player.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9AC20D6DDBA00258DDA /* soccer-player.png */; };
+		03D2F9AF20D6DDBC00258DDA /* calendrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9AD20D6DDBB00258DDA /* calendrier.png */; };
+		03D2F9B420D6DEFB00258DDA /* CalendrierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9B020D6DEF900258DDA /* CalendrierViewController.xib */; };
+		03D2F9B520D6DEFB00258DDA /* TableViewCellCalendrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9B120D6DEFA00258DDA /* TableViewCellCalendrier.swift */; };
+		03D2F9B620D6DEFB00258DDA /* CalendrierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9B220D6DEFB00258DDA /* CalendrierViewController.swift */; };
+		03D2F9B720D6DEFB00258DDA /* TableViewCellCalendrier.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9B320D6DEFB00258DDA /* TableViewCellCalendrier.xib */; };
+		03D2F9BC20D6DF9900258DDA /* ViewControllerCalendrierCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9B820D6DF9800258DDA /* ViewControllerCalendrierCreate.swift */; };
+		03D2F9BD20D6DF9900258DDA /* Calendrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9B920D6DF9900258DDA /* Calendrier.swift */; };
+		03D2F9BE20D6DF9900258DDA /* CalendrierCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9BA20D6DF9900258DDA /* CalendrierCreateViewController.swift */; };
+		03D2F9BF20D6DF9900258DDA /* CalendrierCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9BB20D6DF9900258DDA /* CalendrierCreateViewController.xib */; };
+		03D2F9C220D6E11800258DDA /* EffectifTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9C020D6E11700258DDA /* EffectifTableViewCell.xib */; };
+		03D2F9C320D6E11800258DDA /* EffectifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9C120D6E11700258DDA /* EffectifTableViewCell.swift */; };
+		03D2F9C620D6E1A400258DDA /* TableViewCellEffectif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2F9C420D6E1A200258DDA /* TableViewCellEffectif.swift */; };
+		03D2F9C720D6E1A400258DDA /* TableViewCellEffectif.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D2F9C520D6E1A300258DDA /* TableViewCellEffectif.xib */; };
+		03E5AC0B20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5AC0920DD24A8001F1E07 /* ModifyResponsibleTableViewCell.swift */; };
+		03E5AC0C20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E5AC0A20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.xib */; };
 		7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995DFDD20BDF37900867930 /* AppHomeViewController.swift */; };
 		7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7995DFDE20BDF37900867930 /* AppHomeViewController.xib */; };
 		79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */; };
@@ -96,6 +116,26 @@
 		038AB178209A64D1007C79AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsBarPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		03D2F9A420D6CA4D00258DDA /* PlayerDeployTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDeployTableViewCell.swift; sourceTree = "<group>"; };
+		03D2F9A520D6CA4D00258DDA /* PlayerDeployTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDeployTableViewCell.xib; sourceTree = "<group>"; };
+		03D2F9A820D6DB8900258DDA /* ModifyInfoPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfoPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		03D2F9A920D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifyInfoPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		03D2F9AC20D6DDBA00258DDA /* soccer-player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soccer-player.png"; sourceTree = "<group>"; };
+		03D2F9AD20D6DDBB00258DDA /* calendrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendrier.png; sourceTree = "<group>"; };
+		03D2F9B020D6DEF900258DDA /* CalendrierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendrierViewController.xib; sourceTree = "<group>"; };
+		03D2F9B120D6DEFA00258DDA /* TableViewCellCalendrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellCalendrier.swift; sourceTree = "<group>"; };
+		03D2F9B220D6DEFB00258DDA /* CalendrierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendrierViewController.swift; sourceTree = "<group>"; };
+		03D2F9B320D6DEFB00258DDA /* TableViewCellCalendrier.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCalendrier.xib; sourceTree = "<group>"; };
+		03D2F9B820D6DF9800258DDA /* ViewControllerCalendrierCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCalendrierCreate.swift; sourceTree = "<group>"; };
+		03D2F9B920D6DF9900258DDA /* Calendrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendrier.swift; sourceTree = "<group>"; };
+		03D2F9BA20D6DF9900258DDA /* CalendrierCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendrierCreateViewController.swift; sourceTree = "<group>"; };
+		03D2F9BB20D6DF9900258DDA /* CalendrierCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendrierCreateViewController.xib; sourceTree = "<group>"; };
+		03D2F9C020D6E11700258DDA /* EffectifTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectifTableViewCell.xib; sourceTree = "<group>"; };
+		03D2F9C120D6E11700258DDA /* EffectifTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectifTableViewCell.swift; sourceTree = "<group>"; };
+		03D2F9C420D6E1A200258DDA /* TableViewCellEffectif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellEffectif.swift; sourceTree = "<group>"; };
+		03D2F9C520D6E1A300258DDA /* TableViewCellEffectif.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellEffectif.xib; sourceTree = "<group>"; };
+		03E5AC0920DD24A8001F1E07 /* ModifyResponsibleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyResponsibleTableViewCell.swift; sourceTree = "<group>"; };
+		03E5AC0A20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifyResponsibleTableViewCell.xib; sourceTree = "<group>"; };
 		7995DFDD20BDF37900867930 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		7995DFDE20BDF37900867930 /* AppHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHomeViewController.xib; sourceTree = "<group>"; };
 		79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectifViewController.swift; sourceTree = "<group>"; };
@@ -151,14 +191,18 @@
 				0315FAC22091265800CA5DB0 /* Statia.xcdatamodeld */,
 				032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */,
 				032910DF20A1F5B9000C93C7 /* TableViewPlayersController.xib */,
-				032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */,
-				032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */,
 				7995DFDD20BDF37900867930 /* AppHomeViewController.swift */,
 				7995DFDE20BDF37900867930 /* AppHomeViewController.xib */,
 				79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */,
 				79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */,
 				032156B920CD62A900441586 /* TableViewStatsPlayerController.swift */,
 				032156BA20CD62A900441586 /* TableViewStatsPlayerController.xib */,
+				03D2F9B220D6DEFB00258DDA /* CalendrierViewController.swift */,
+				03D2F9B020D6DEF900258DDA /* CalendrierViewController.xib */,
+				03D2F9B120D6DEFA00258DDA /* TableViewCellCalendrier.swift */,
+				03D2F9B320D6DEFB00258DDA /* TableViewCellCalendrier.xib */,
+				03D2F9C120D6E11700258DDA /* EffectifTableViewCell.swift */,
+				03D2F9C020D6E11700258DDA /* EffectifTableViewCell.xib */,
 			);
 			path = Statia;
 			sourceTree = "<group>";
@@ -166,6 +210,7 @@
 		032156B320CBCC8800441586 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				03D2F9A320D6C97500258DDA /* PlayerList */,
 				032156B420CBCC9500441586 /* StatsPlayer */,
 			);
 			path = Cells;
@@ -194,6 +239,10 @@
 				032156E220D45D0C00441586 /* HealthTableViewCell.xib */,
 				032156E520D4682600441586 /* GoalTableViewCell.swift */,
 				032156E620D4682600441586 /* GoalTableViewCell.xib */,
+				03D2F9A820D6DB8900258DDA /* ModifyInfoPlayerTableViewCell.swift */,
+				03D2F9A920D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.xib */,
+				03E5AC0920DD24A8001F1E07 /* ModifyResponsibleTableViewCell.swift */,
+				03E5AC0A20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.xib */,
 			);
 			path = StatsPlayer;
 			sourceTree = "<group>";
@@ -201,12 +250,27 @@
 		032910D820A1DD92000C93C7 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				03D2F9AD20D6DDBB00258DDA /* calendrier.png */,
+				03D2F9AC20D6DDBA00258DDA /* soccer-player.png */,
 				032156DD20D435D200441586 /* red_card.png */,
 				032156DE20D435D200441586 /* yellow_card.png */,
 				032910DB20A1F1EC000C93C7 /* logo_Statia.png */,
 				032910D920A1E29F000C93C7 /* background_blue.jpg */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		03D2F9A320D6C97500258DDA /* PlayerList */ = {
+			isa = PBXGroup;
+			children = (
+				032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */,
+				032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */,
+				03D2F9A420D6CA4D00258DDA /* PlayerDeployTableViewCell.swift */,
+				03D2F9A520D6CA4D00258DDA /* PlayerDeployTableViewCell.xib */,
+				03D2F9C420D6E1A200258DDA /* TableViewCellEffectif.swift */,
+				03D2F9C520D6E1A300258DDA /* TableViewCellEffectif.xib */,
+			);
+			path = PlayerList;
 			sourceTree = "<group>";
 		};
 		79AA61EA20C2054200665B3C /* Players */ = {
@@ -223,6 +287,10 @@
 			children = (
 				79AA61F020C2059100665B3C /* Player.swift */,
 				79AA61F220C2061200665B3C /* Poste.swift */,
+				03D2F9B920D6DF9900258DDA /* Calendrier.swift */,
+				03D2F9BA20D6DF9900258DDA /* CalendrierCreateViewController.swift */,
+				03D2F9BB20D6DF9900258DDA /* CalendrierCreateViewController.xib */,
+				03D2F9B820D6DF9800258DDA /* ViewControllerCalendrierCreate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */,
+				03D2F9BF20D6DF9900258DDA /* CalendrierCreateViewController.xib in Resources */,
 				79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */,
 				032156C420CDD0B000441586 /* PlayTimeTableViewCell.xib in Resources */,
 				032156BC20CD62A900441586 /* TableViewStatsPlayerController.xib in Resources */,
@@ -294,9 +363,16 @@
 				0315FAC92091265800CA5DB0 /* LaunchScreen.storyboard in Resources */,
 				032156E420D45D0C00441586 /* HealthTableViewCell.xib in Resources */,
 				032156D020D0653400441586 /* LastPassTableViewCell.xib in Resources */,
+				03D2F9C220D6E11800258DDA /* EffectifTableViewCell.xib in Resources */,
+				03E5AC0C20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.xib in Resources */,
+				03D2F9A720D6CA4D00258DDA /* PlayerDeployTableViewCell.xib in Resources */,
 				032156C820CF1BC800441586 /* SeasonResultsTableViewCell.xib in Resources */,
+				03D2F9AF20D6DDBC00258DDA /* calendrier.png in Resources */,
 				032156C020CDC8F600441586 /* ResponsibleTableViewCell.xib in Resources */,
+				03D2F9B720D6DEFB00258DDA /* TableViewCellCalendrier.xib in Resources */,
+				03D2F9B420D6DEFB00258DDA /* CalendrierViewController.xib in Resources */,
 				032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */,
+				03D2F9AB20D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.xib in Resources */,
 				032156CC20CF24C200441586 /* ButsTableViewCell.xib in Resources */,
 				032156D820D313A100441586 /* CardsTableViewCell.xib in Resources */,
 				032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */,
@@ -306,6 +382,8 @@
 				0315FAC12091265700CA5DB0 /* Main.storyboard in Resources */,
 				7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */,
 				032156B820CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib in Resources */,
+				03D2F9AE20D6DDBC00258DDA /* soccer-player.png in Resources */,
+				03D2F9C720D6E1A400258DDA /* TableViewCellEffectif.xib in Resources */,
 				032156E820D4682600441586 /* GoalTableViewCell.xib in Resources */,
 				032156DF20D435D300441586 /* red_card.png in Resources */,
 				038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */,
@@ -329,14 +407,24 @@
 				79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */,
 				79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */,
 				0315FABE2091265700CA5DB0 /* ViewController.swift in Sources */,
+				03D2F9BC20D6DF9900258DDA /* ViewControllerCalendrierCreate.swift in Sources */,
 				0315FABC2091265700CA5DB0 /* AppDelegate.swift in Sources */,
 				032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */,
 				0315FAC42091265800CA5DB0 /* Statia.xcdatamodeld in Sources */,
+				03D2F9A620D6CA4D00258DDA /* PlayerDeployTableViewCell.swift in Sources */,
+				03D2F9BE20D6DF9900258DDA /* CalendrierCreateViewController.swift in Sources */,
+				03D2F9C320D6E11800258DDA /* EffectifTableViewCell.swift in Sources */,
+				03E5AC0B20DD24A8001F1E07 /* ModifyResponsibleTableViewCell.swift in Sources */,
+				03D2F9B520D6DEFB00258DDA /* TableViewCellCalendrier.swift in Sources */,
+				03D2F9C620D6E1A400258DDA /* TableViewCellEffectif.swift in Sources */,
 				032156D720D313A100441586 /* CardsTableViewCell.swift in Sources */,
+				03D2F9BD20D6DF9900258DDA /* Calendrier.swift in Sources */,
 				79AA61F320C2061200665B3C /* Poste.swift in Sources */,
 				032156BB20CD62A900441586 /* TableViewStatsPlayerController.swift in Sources */,
 				79AA61F120C2059100665B3C /* Player.swift in Sources */,
 				032156E720D4682600441586 /* GoalTableViewCell.swift in Sources */,
+				03D2F9B620D6DEFB00258DDA /* CalendrierViewController.swift in Sources */,
+				03D2F9AA20D6DB8A00258DDA /* ModifyInfoPlayerTableViewCell.swift in Sources */,
 				038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */,
 				032156CB20CF24C200441586 /* ButsTableViewCell.swift in Sources */,
 				032156C320CDD0B000441586 /* PlayTimeTableViewCell.swift in Sources */,

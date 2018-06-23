@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,20 +45,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-BV-Bl3">
+                        <rect key="frame" x="381" y="60" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="deploy:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NDO-1O-k6J"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yQi-5I-SeK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="DaA-Ra-Fnr"/>
                     <constraint firstItem="yQi-5I-SeK" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="FNz-sN-gNK"/>
+                    <constraint firstItem="fIV-BV-Bl3" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="LC6-XP-y2d"/>
                     <constraint firstItem="YgS-Sv-bIi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MjD-9X-cNQ"/>
                     <constraint firstItem="vbv-z5-OwQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="Owg-0k-a8K"/>
                     <constraint firstItem="vbv-z5-OwQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cv7-rE-ecY"/>
                     <constraint firstAttribute="bottomMargin" secondItem="pS3-Ox-QKZ" secondAttribute="bottom" constant="5" id="dZG-73-nSF"/>
                     <constraint firstItem="YgS-Sv-bIi" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uSD-kA-Aci"/>
                     <constraint firstItem="pS3-Ox-QKZ" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uXS-JW-Mws"/>
+                    <constraint firstItem="fIV-BV-Bl3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wGC-45-Axc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnDeploy" destination="fIV-BV-Bl3" id="W7m-09-yRA"/>
                 <outlet property="labelNom" destination="yQi-5I-SeK" id="1HG-CK-tfq"/>
                 <outlet property="labelPoste" destination="YgS-Sv-bIi" id="Thp-4y-eLN"/>
                 <outlet property="labelPrenom" destination="pS3-Ox-QKZ" id="RwZ-wK-tOm"/>

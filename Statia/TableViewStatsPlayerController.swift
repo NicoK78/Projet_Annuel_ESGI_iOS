@@ -8,16 +8,38 @@
 
 import UIKit
 
-class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, UITableViewDelegate, ModifyInfosDelegate, StatsInfosDelegate {
+    func modifyInfos(cell: ModifyInfoPlayerTableViewCell) {
+        print("ModifyInfos")
+        modifyCells(cell: cell)
+    }
+    
+    func modifyInfos(cell: StatsInfoPlayerTableViewCell) {
+        print("StatsInfos")
+        modifyCells(cell: cell)
+    }
+    
+    func modifyCells(cell: UITableViewCell) {
+//        let indexPath = tableView.indexPath(for: cell)
+        let indexPath = tableView.indexPathsForVisibleRows
+        isModifying = !isModifying
+        tableView.reloadRows(at: indexPath!, with: UITableViewRowAnimation.none)
+        
+    }
+    
 
     @IBOutlet var tableView: UITableView!
+    
+    var isModifying: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.tableView.register(UINib(nibName: "StatsInfoPlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "statsInfoIdentifier")
+        self.tableView.register(UINib(nibName: "ModifyInfoPlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "modifyInfoIdentifier")
         self.tableView.register(UINib(nibName: "ResponsibleTableViewCell", bundle: nil), forCellReuseIdentifier: "responsibleIdentifier")
+        self.tableView.register(UINib(nibName: "ModifyResponsibleTableViewCell", bundle: nil), forCellReuseIdentifier: "modifyResponsibleIdentifier")
         self.tableView.register(UINib(nibName: "StatsBarPlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "statsBarIdentifier")
         self.tableView.register(UINib(nibName: "PlayTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "playTimeIdentifier")
         self.tableView.register(UINib(nibName: "SeasonResultsTableViewCell", bundle: nil), forCellReuseIdentifier: "seasonResultsIdentifier")
@@ -67,14 +89,28 @@ class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, U
         
         switch indexPath.item {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "statsInfoIdentifier", for: indexPath)
-            if let accessoryCell = cell as? StatsInfoPlayerTableViewCell {
-                
+            if(!isModifying) {
+                cell = tableView.dequeueReusableCell(withIdentifier: "statsInfoIdentifier", for: indexPath)
+                if let accessoryCell = cell as? StatsInfoPlayerTableViewCell {
+                    accessoryCell.delegate = self
+                }
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "modifyInfoIdentifier", for: indexPath)
+                if let accessoryCell = cell as? ModifyInfoPlayerTableViewCell {
+                    accessoryCell.delegate = self
+                }
             }
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "responsibleIdentifier", for: indexPath)
-            if let accessoryCell = cell as? ResponsibleTableViewCell {
-                
+            if(!isModifying) {
+                cell = tableView.dequeueReusableCell(withIdentifier: "responsibleIdentifier", for: indexPath)
+                if let accessoryCell = cell as? ResponsibleTableViewCell {
+                    
+                }
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "modifyResponsibleIdentifier", for: indexPath)
+                if let accessoryCell = cell as? ModifyResponsibleTableViewCell {
+                    
+                }
             }
         case 2:
             cell = tableView.dequeueReusableCell(withIdentifier: "playTimeIdentifier", for: indexPath)
@@ -151,9 +187,17 @@ class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.item {
         case 0:
-            return 120
+            if(!isModifying) {
+                return 120
+            } else {
+                return 300
+            }
         case 1:
-            return 110
+            if(!isModifying) {
+                return 110
+            } else {
+                return 153
+            }
         case 2:
             return 60
         case 3:
