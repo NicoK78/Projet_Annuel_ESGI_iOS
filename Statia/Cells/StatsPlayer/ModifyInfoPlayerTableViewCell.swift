@@ -14,6 +14,7 @@ protocol ModifyInfosDelegate: AnyObject {
 class ModifyInfoPlayerTableViewCell: UITableViewCell {
 
     @IBOutlet var btnModify: UIButton!
+    @IBOutlet var datePicker: UIDatePicker!
     
     weak var delegate: ModifyInfosDelegate?
     

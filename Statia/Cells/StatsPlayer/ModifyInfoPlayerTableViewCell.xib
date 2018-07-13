@@ -136,6 +136,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnModify" destination="x8A-uU-1CL" id="VNV-Zh-ZnZ"/>
+                <outlet property="datePicker" destination="Oaw-Kc-Ruz" id="PGi-XD-0Fe"/>
             </connections>
         </tableViewCell>
     </objects>

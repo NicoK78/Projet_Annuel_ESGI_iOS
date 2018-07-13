@@ -97,6 +97,10 @@ class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, U
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "modifyInfoIdentifier", for: indexPath)
                 if let accessoryCell = cell as? ModifyInfoPlayerTableViewCell {
+                    accessoryCell.datePicker.datePickerMode = UIDatePickerMode.date
+                    let loc = Locale(identifier: "fr")
+                    accessoryCell.datePicker.locale = loc
+                    
                     accessoryCell.delegate = self
                 }
             }
