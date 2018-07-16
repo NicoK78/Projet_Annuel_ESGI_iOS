@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,6 +14,8 @@
             <connections>
                 <outlet property="button" destination="nKj-fC-AdM" id="kNw-HC-L7Q"/>
                 <outlet property="logoImg" destination="WKm-vU-mEJ" id="ueh-7i-MGv"/>
+                <outlet property="passwordTxt" destination="lue-W6-O22" id="s6b-aG-hKC"/>
+                <outlet property="usernameTxt" destination="XPU-fn-6o2" id="TRg-Ua-jug"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,14 +31,14 @@
                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="connection:" destination="-1" eventType="touchUpInside" id="pzb-7d-cfO"/>
+                        <action selector="login:" destination="-1" eventType="touchDown" id="IXH-Bv-feP"/>
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lue-W6-O22">
                     <rect key="frame" x="20" y="453.66666666666669" width="374" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rj-Cm-Rmx">
                     <rect key="frame" x="20" y="424.66666666666669" width="104" height="21"/>

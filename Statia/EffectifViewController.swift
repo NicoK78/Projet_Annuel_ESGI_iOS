@@ -11,8 +11,9 @@ import UIKit
 class EffectifViewController: UIViewController , UITableViewDelegate , UITableViewDataSource  {
     
     @IBOutlet var tableViewEffectif: UITableView!
+    var playersTab = [Player]()
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
         // Do any additional setup after loading the view.
@@ -22,15 +23,15 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
 
         self.tableViewEffectif.register(UINib(nibName:"TableViewCellEffectif",bundle:nil), forCellReuseIdentifier: "EffectifCell")
         //self.tableView.register(EffectifTableViewCell.self, forCellReuseIdentifier: "EffectifCell")
-
         
-
-        print("Coucou")
     }
+    
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.playersTab.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,14 +44,19 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
             }
             
         }*/
-        cell.labelNom.text = "Viadenou"
-        cell.labelPrenom.text = "Selom Junior"
-        cell.labelPoste.text = "Attaquant"
+        cell.labelNom.text = self.playersTab[indexPath.row].name
+        cell.labelPrenom.text = self.playersTab[indexPath.row].firstname
+        cell.labelPoste.text = self.playersTab[indexPath.row].poste
         cell.photoProfil.image = UIImage(named: "soccer-player.png")!
 
         //cell = EffectifTableViewCell(style: .default, reuseIdentifier: "EffectifCell")
         //let cell = UITableViewCell(style: .default, reuseIdentifier: "EffectifTableViewCell")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tableViewPlayersController = TableViewStatsPlayerController(nibName: "TableViewStatsPlayerController", bundle: nil)
+        self.navigationController?.pushViewController(tableViewPlayersController, animated: true)
     }
     
     
@@ -60,7 +66,17 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
 
     
     override func viewWillAppear(_ animated: Bool) {
+        self.playersTab.removeAll()
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlayer))
+        print(UserDefaults.standard.integer(forKey: "team"))
+        let idTeam = UserDefaults.standard.integer(forKey: "team")
+        Alamoquest.getPlayerByTeam(id: idTeam) { (players) in
+            for player in players{
+                self.playersTab.append(player)
+                self.tableViewEffectif.reloadData()
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

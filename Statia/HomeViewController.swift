@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
     @IBOutlet var logoImg: UIImageView!
     @IBOutlet var button: UIButton!
-    @IBAction func connection(_ sender: UIButton) {
+    
+    @IBOutlet var usernameTxt: UITextField!
+    
+    @IBOutlet var passwordTxt: UITextField!
+    /*@IBAction func connection(_ sender: UIButton) {
         let tableViewPlayersController = TableViewPlayersController(nibName: "TableViewPlayersController", bundle: nil)
         let homeView = AppHomeViewController(nibName: "AppHomeViewController", bundle: nil)
         self.navigationController?.pushViewController(homeView, animated: true)
-    }
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let margins = view.layoutMarginsGuide
@@ -36,6 +42,38 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func login(_ sender: Any) {
+        /*UserDefaults.standard.set(0, forKey: "team")
+        let tableViewPlayersController = TableViewPlayersController(nibName: "TableViewPlayersController", bundle: nil)
+        let homeView = AppHomeViewController(nibName: "AppHomeViewController", bundle: nil)
+        self.navigationController?.pushViewController(homeView, animated: true)
+        return*/
+        if (usernameTxt.text == "" && passwordTxt.text == ""){
+            let username = usernameTxt.text
+            let password = passwordTxt.text
+            
+            let parameter: Parameters = [
+                "username":"viadenouselom@gmail.com",
+                "password":"Jogabonito29&"
+            ]
+            
+            Alamoquest.login(parameter: parameter, completionHandler: { (json) in
+                print("JSON : \(json)")
+                if (json == false){
+                    let alert = UIAlertController(title: "Attention", message: "Identifiant ou mot de passe incorect", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true)
+                }else{
+                    UserDefaults.standard.set(0, forKey: "team")
+                    let tableViewPlayersController = TableViewPlayersController(nibName: "TableViewPlayersController", bundle: nil)
+                    let homeView = AppHomeViewController(nibName: "AppHomeViewController", bundle: nil)
+                    self.navigationController?.pushViewController(homeView, animated: true)
+                }
+            })
+        }
     }
     
 

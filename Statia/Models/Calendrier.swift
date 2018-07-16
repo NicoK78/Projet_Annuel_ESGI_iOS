@@ -12,6 +12,5 @@ class Calendrier {
     var adversaire = ""
     var type = ""
     var date = Date()
-    var poste = Poste()
     var lieu = ""
 }

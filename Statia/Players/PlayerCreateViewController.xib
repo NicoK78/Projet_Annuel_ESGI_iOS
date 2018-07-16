@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,9 +12,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerCreateViewController" customModule="Statia" customModuleProvider="target">
             <connections>
                 <outlet property="birthdayLabel" destination="fFu-4o-OiT" id="ZSv-M3-Kq2"/>
-                <outlet property="imgLogo" destination="STH-Ng-FpE" id="vQM-w7-1h9"/>
+                <outlet property="emailLabel" destination="GNS-Cw-VQu" id="RJz-Sa-zNq"/>
                 <outlet property="labelAge" destination="TqK-uF-gnv" id="DHD-hE-fMi"/>
+                <outlet property="labelNom" destination="U4I-9G-YZs" id="bFb-f1-h68"/>
+                <outlet property="labelPrenom" destination="vpO-0h-G4X" id="jpw-Ws-uPv"/>
                 <outlet property="pickerBirthday" destination="ldh-Ux-R8k" id="AfA-0w-YWH"/>
+                <outlet property="pickerPoste" destination="sor-YW-t2f" id="cCe-eb-MSu"/>
+                <outlet property="piedFortLabel" destination="CH4-eH-ZID" id="B6Y-1D-kKe"/>
+                <outlet property="portableLabel" destination="6qb-Me-uug" id="VHu-jQ-FDP"/>
+                <outlet property="posteLabel" destination="rOB-5f-eQ6" id="p7E-bJ-7aN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="wHn-y5-g7Z"/>
             </connections>
         </placeholder>
@@ -52,8 +57,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="hideDateBirth:" destination="-1" eventType="editingDidEnd" id="m85-hE-9t2"/>
-                        <action selector="showPickerBirthday:" destination="-1" eventType="touchDown" id="ylk-Mr-bsJ"/>
+                        <action selector="hidePickerPoste:" destination="-1" eventType="editingDidEnd" id="wAd-mS-DRI"/>
+                        <action selector="showPickerPoste:" destination="-1" eventType="touchDown" id="OLg-Q5-brK"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pied fort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CH4-eH-ZID">
@@ -61,31 +66,15 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="hideDateBirth:" destination="-1" eventType="editingDidEnd" id="dsC-2b-4Zs"/>
-                        <action selector="showPickerBirthday:" destination="-1" eventType="touchDown" id="YGu-r6-tfi"/>
-                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Portable" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6qb-Me-uug">
                     <rect key="frame" x="0.0" y="385" width="375" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="hideDateBirth:" destination="-1" eventType="editingDidEnd" id="ucz-ko-aw1"/>
-                        <action selector="showPickerBirthday:" destination="-1" eventType="touchDown" id="hIk-Lm-WPd"/>
-                    </connections>
                 </textField>
-                <datePicker hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-Ux-R8k">
-                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                    <date key="date" timeIntervalSinceReferenceDate="549588287.74479604">
-                        <!--2018-06-01 23:24:47 +0000-->
-                    </date>
-                    <locale key="locale" localeIdentifier="fr"/>
-                </datePicker>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqK-uF-gnv">
-                    <rect key="frame" x="5" y="200" width="0.0" height="0.0"/>
+                    <rect key="frame" x="5" y="175" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -95,17 +84,18 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="hideDateBirth:" destination="-1" eventType="editingDidEnd" id="Oya-J7-Qa5"/>
-                        <action selector="showPickerBirthday:" destination="-1" eventType="touchDown" id="JQT-8Q-sBs"/>
-                    </connections>
                 </textField>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Statia.png" translatesAutoresizingMaskIntoConstraints="NO" id="STH-Ng-FpE">
-                    <rect key="frame" x="0.0" y="517" width="375" height="150"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="150" id="BNa-0g-6YB"/>
-                    </constraints>
-                </imageView>
+                <datePicker hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-Ux-R8k">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                    <date key="date" timeIntervalSinceReferenceDate="549588287.74479604">
+                        <!--2018-06-01 23:24:47 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="fr"/>
+                </datePicker>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sor-YW-t2f">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -113,24 +103,23 @@
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="U4I-9G-YZs" secondAttribute="leading" id="6xk-zL-bkW"/>
                 <constraint firstItem="U4I-9G-YZs" firstAttribute="top" secondItem="vpO-0h-G4X" secondAttribute="bottom" constant="30" id="8tT-7D-5nu"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B51-2D-J0C"/>
+                <constraint firstItem="sor-YW-t2f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bcq-sm-3VN"/>
                 <constraint firstItem="CH4-eH-ZID" firstAttribute="top" secondItem="rOB-5f-eQ6" secondAttribute="bottom" constant="30" id="Csg-XX-kXS"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="fFu-4o-OiT" secondAttribute="trailing" id="FdF-ki-UxF"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="CH4-eH-ZID" secondAttribute="trailing" id="HZz-Tc-THn"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="U4I-9G-YZs" secondAttribute="trailing" id="Irw-Sy-IAg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STH-Ng-FpE" secondAttribute="trailing" id="JDm-dH-Ftb"/>
                 <constraint firstItem="GNS-Cw-VQu" firstAttribute="top" secondItem="6qb-Me-uug" secondAttribute="bottom" constant="30" id="Lbb-e1-rHS"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="fFu-4o-OiT" secondAttribute="leading" id="Pb5-c2-47U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sor-YW-t2f" secondAttribute="bottom" id="UOh-mh-3im"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="vpO-0h-G4X" secondAttribute="trailing" id="VMd-Yt-Gzv"/>
                 <constraint firstAttribute="trailing" secondItem="ldh-Ux-R8k" secondAttribute="trailing" id="WiG-bk-9IN"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="rOB-5f-eQ6" secondAttribute="trailing" id="XgO-o0-uY8"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="trailing" secondItem="6qb-Me-uug" secondAttribute="trailing" id="afX-bZ-ENc"/>
+                <constraint firstItem="sor-YW-t2f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="alb-c8-6vu"/>
                 <constraint firstItem="GNS-Cw-VQu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bIv-Uc-jaJ"/>
-                <constraint firstItem="STH-Ng-FpE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bur-7l-bOa"/>
                 <constraint firstItem="TqK-uF-gnv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="cD8-7c-CxF"/>
                 <constraint firstItem="rOB-5f-eQ6" firstAttribute="top" secondItem="fFu-4o-OiT" secondAttribute="bottom" constant="30" id="cwg-cJ-apq"/>
-                <constraint firstItem="fFu-4o-OiT" firstAttribute="top" secondItem="TqK-uF-gnv" secondAttribute="bottom" constant="5" id="dgJ-4e-8uO"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="vpO-0h-G4X" secondAttribute="leading" id="flo-n7-GTn"/>
-                <constraint firstItem="STH-Ng-FpE" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="fuP-eR-22w"/>
                 <constraint firstItem="GNS-Cw-VQu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="idu-WO-orR"/>
                 <constraint firstItem="vpO-0h-G4X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="iuu-Gb-E9z"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="j0N-sl-Kea"/>
@@ -138,7 +127,7 @@
                 <constraint firstItem="6qb-Me-uug" firstAttribute="top" secondItem="CH4-eH-ZID" secondAttribute="bottom" constant="30" id="ncN-vr-1al"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="CH4-eH-ZID" secondAttribute="leading" id="pGZ-47-whh"/>
                 <constraint firstItem="ldh-Ux-R8k" firstAttribute="leading" secondItem="6qb-Me-uug" secondAttribute="leading" id="pcd-IV-tOi"/>
-                <constraint firstItem="TqK-uF-gnv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="sU2-AJ-sP3"/>
+                <constraint firstItem="TqK-uF-gnv" firstAttribute="top" secondItem="U4I-9G-YZs" secondAttribute="bottom" constant="15" id="rFF-v2-hHB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
@@ -149,7 +138,4 @@
             <point key="canvasLocation" x="557.5" y="-189.5"/>
         </scrollView>
     </objects>
-    <resources>
-        <image name="logo_Statia.png" width="1325" height="328"/>
-    </resources>
 </document>

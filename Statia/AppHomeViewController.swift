@@ -17,14 +17,15 @@ class AppHomeViewController: UITabBarController   {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
         // Do any additional setup after loading the view.
         
-       
+        let nameClub = UserDefaults.standard.string(forKey: "nameclub")
+        self.navigationItem.title = nameClub
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let tableview = TableViewPlayersController()
-        tableview.title = "First"
-        tableview.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
+        let team = TeamTableViewController()
+        team.title = "First"
+        team.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
         
         
         let effectif = EffectifViewController()
@@ -34,9 +35,15 @@ class AppHomeViewController: UITabBarController   {
         let calendrier = CalendrierViewController()
         calendrier.title = "Calendrier"
         calendrier.tabBarItem = UITabBarItem(title: "Calendrier", image: UIImage(named: "calendrier.png"), tag: 2)
+        
+        let composition = CompoViewController()
+        composition.tabBarItem = UITabBarItem(title: "Composition", image: nil, tag: 3)
+        
+        let resultat = ResultatViewController()
+        resultat.tabBarItem = UITabBarItem(title: "Resultat", image: nil, tag: 4)
 
         
-        let controllers = [tableview,effectif,calendrier]
+        let controllers = [team,effectif,calendrier,composition,resultat]
         self.viewControllers = controllers
         
     }

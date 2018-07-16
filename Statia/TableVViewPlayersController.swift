@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TableViewPlayersController: UIViewController, UITableViewDataSource , UITableViewDelegate {
 //    typealias Stat = (string,int,)
     @IBOutlet var tableView: UITableView!
@@ -15,10 +16,14 @@ class TableViewPlayersController: UIViewController, UITableViewDataSource , UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName:"TableViewCellPlayer",bundle:nil), forCellReuseIdentifier: "reuseCellIdentifier")
-        
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        Alamoquest.getTeam { (teams) in
+            for team in teams {
+                print(team.name)
+            }
+        }
         
         // Do any additional setup after loading the view.
     }

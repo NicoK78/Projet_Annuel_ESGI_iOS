@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +14,13 @@
                 <outlet property="btnAmical" destination="mcJ-Je-cGe" id="yFg-WM-ghd"/>
                 <outlet property="btnChampionnat" destination="YbD-Ao-jgy" id="Z7n-oV-OBq"/>
                 <outlet property="btnCoupe" destination="S02-44-WVG" id="6Rq-OQ-hHv"/>
+                <outlet property="datePicker" destination="9ec-Tf-wav" id="DSQ-Sk-PR6"/>
+                <outlet property="dateTxt" destination="XuU-pu-YHH" id="ehu-Dx-bKW"/>
+                <outlet property="labelDomicile" destination="gQn-EE-HDz" id="ZBi-zi-Y2q"/>
+                <outlet property="labelExterieur" destination="Qr6-BE-8DX" id="okK-Yw-VOv"/>
+                <outlet property="pickerView" destination="4g9-Ya-Xge" id="JDB-Ud-fdW"/>
                 <outlet property="switchLieu" destination="3gb-oD-ftc" id="tRq-Bk-fqG"/>
+                <outlet property="versusTeamTxt" destination="lJz-sH-1hP" id="yUo-O3-k7r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,12 +34,20 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editVersusTeam:" destination="-1" eventType="touchDown" id="Wph-9I-yHm"/>
+                        <action selector="endEditTeam:" destination="-1" eventType="editingDidEnd" id="5eP-ar-iL5"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-pu-YHH">
                     <rect key="frame" x="0.0" y="240" width="375" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editVersusTeam:" destination="-1" eventType="touchDown" id="xSE-if-0CW"/>
+                        <action selector="endEditTeam:" destination="-1" eventType="editingDidEnd" id="cUW-ZY-6m1"/>
+                    </connections>
                 </textField>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gb-oD-ftc">
                     <rect key="frame" x="163" y="315" width="51" height="31"/>
@@ -69,6 +82,19 @@
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-Ya-Xge">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                </pickerView>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Tf-wav">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <date key="date" timeIntervalSinceReferenceDate="553137949.50606799">
+                        <!--2018-07-13 01:25:49 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="fr"/>
+                    <connections>
+                        <action selector="endEditTeam:" destination="-1" eventType="touchDragExit" id="rCo-aw-ipj"/>
+                    </connections>
+                </datePicker>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -82,11 +108,17 @@
                 <constraint firstItem="Qr6-BE-8DX" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Bpk-7R-ByB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qr6-BE-8DX" secondAttribute="trailing" constant="50" id="Dwu-sl-wSA"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="EQg-eH-ZDQ"/>
+                <constraint firstItem="9ec-Tf-wav" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HLm-T4-pgU"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="top" secondItem="lJz-sH-1hP" secondAttribute="bottom" constant="40" id="M6Z-Z6-MGL"/>
+                <constraint firstItem="4g9-Ya-Xge" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Rgl-Ao-6az"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lJz-sH-1hP" secondAttribute="trailing" id="SHV-Xf-n0W"/>
+                <constraint firstItem="9ec-Tf-wav" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WOy-6g-SCG"/>
                 <constraint firstItem="gQn-EE-HDz" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Xfr-le-6zr"/>
+                <constraint firstItem="9ec-Tf-wav" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z8s-Ab-2pF"/>
                 <constraint firstItem="mcJ-Je-cGe" firstAttribute="top" secondItem="Qr6-BE-8DX" secondAttribute="bottom" constant="60" id="b5w-YL-DXK"/>
                 <constraint firstItem="lJz-sH-1hP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVu-qV-fYY"/>
+                <constraint firstItem="4g9-Ya-Xge" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dcD-0Q-MiJ"/>
+                <constraint firstItem="4g9-Ya-Xge" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fNt-dc-wOG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mcJ-Je-cGe" secondAttribute="trailing" constant="65" id="gGE-gG-LVx"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mTw-hc-pGk"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="top" secondItem="gQn-EE-HDz" secondAttribute="bottom" constant="60" id="oup-4i-eVS"/>

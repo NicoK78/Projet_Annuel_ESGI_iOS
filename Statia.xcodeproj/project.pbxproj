@@ -37,22 +37,70 @@
 		032156E820D4682600441586 /* GoalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032156E620D4682600441586 /* GoalTableViewCell.xib */; };
 		032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 032910D920A1E29F000C93C7 /* background_blue.jpg */; };
 		032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */ = {isa = PBXBuildFile; fileRef = 032910DB20A1F1EC000C93C7 /* logo_Statia.png */; };
-		032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */; };
-		032910E120A1F5B9000C93C7 /* TableViewPlayersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032910DF20A1F5B9000C93C7 /* TableViewPlayersController.xib */; };
+		032910E020A1F5B9000C93C7 /* TableVViewPlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032910DE20A1F5B9000C93C7 /* TableVViewPlayersController.swift */; };
+		032910E120A1F5B9000C93C7 /* TableVViewPlayersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032910DF20A1F5B9000C93C7 /* TableVViewPlayersController.xib */; };
 		032910E420A3A287000C93C7 /* TableViewCellPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */; };
 		032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */; };
 		038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038AB177209A64D1007C79AE /* HomeViewController.swift */; };
 		038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AB178209A64D1007C79AE /* HomeViewController.xib */; };
 		03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */; };
 		03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */; };
+		79037A1D20F6589F007B83E6 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79037A1C20F6589E007B83E6 /* Coach.swift */; };
+		7928F45720EB82F5005EA8CB /* Alamoquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928F45620EB82F5005EA8CB /* Alamoquest.swift */; };
+		7928F45920EB8466005EA8CB /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928F45820EB8466005EA8CB /* Club.swift */; };
+		7928F46520EB9F98005EA8CB /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928F46320EB9F98005EA8CB /* TeamTableViewCell.swift */; };
+		7928F46620EB9F98005EA8CB /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7928F46420EB9F98005EA8CB /* TeamTableViewCell.xib */; };
+		7928F46920EBA03B005EA8CB /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928F46720EBA03B005EA8CB /* TeamTableViewController.swift */; };
+		7928F46A20EBA03B005EA8CB /* TeamTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7928F46820EBA03B005EA8CB /* TeamTableViewController.xib */; };
+		79383F1720F6BFC500B9381E /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79383F1620F6BFC500B9381E /* Match.swift */; };
+		79383F1B20F6CBAE00B9381E /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79383F1920F6CBAE00B9381E /* MatchTableViewCell.swift */; };
+		79383F1C20F6CBAE00B9381E /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79383F1A20F6CBAE00B9381E /* MatchTableViewCell.xib */; };
+		79383F1F20F7966300B9381E /* ResultatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79383F1D20F7966300B9381E /* ResultatViewController.swift */; };
+		79383F2020F7966300B9381E /* ResultatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79383F1E20F7966300B9381E /* ResultatViewController.xib */; };
+		79383F2320F8219D00B9381E /* ResultatSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79383F2120F8219D00B9381E /* ResultatSecondViewController.swift */; };
+		79383F2420F8219D00B9381E /* ResultatSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79383F2220F8219D00B9381E /* ResultatSecondViewController.xib */; };
+		79383F2620F82FB900B9381E /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79383F2520F82FB900B9381E /* League.swift */; };
+		7940286020F6206700E518C7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7940285F20F6206600E518C7 /* Default-568h@2x.png */; };
+		7948CD4920D491FE00B053B1 /* TableViewCellEffectif.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD4120D491FD00B053B1 /* TableViewCellEffectif.xib */; };
+		7948CD4A20D491FE00B053B1 /* CalendrierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD4220D491FD00B053B1 /* CalendrierViewController.xib */; };
+		7948CD4B20D491FE00B053B1 /* EffectifTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD4320D491FD00B053B1 /* EffectifTableViewCell.xib */; };
+		7948CD4C20D491FE00B053B1 /* EffectifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD4420D491FD00B053B1 /* EffectifTableViewCell.swift */; };
+		7948CD4D20D491FE00B053B1 /* TableViewCellCalendrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD4520D491FD00B053B1 /* TableViewCellCalendrier.swift */; };
+		7948CD4E20D491FE00B053B1 /* TableViewCellEffectif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD4620D491FD00B053B1 /* TableViewCellEffectif.swift */; };
+		7948CD4F20D491FE00B053B1 /* TableViewCellCalendrier.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD4720D491FE00B053B1 /* TableViewCellCalendrier.xib */; };
+		7948CD5020D491FE00B053B1 /* CalendrierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD4820D491FE00B053B1 /* CalendrierViewController.swift */; };
+		7948CD5520D4923200B053B1 /* CalendrierCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD5120D4923100B053B1 /* CalendrierCreateViewController.swift */; };
+		7948CD5620D4923200B053B1 /* CalendrierCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD5220D4923100B053B1 /* CalendrierCreateViewController.xib */; };
+		7948CD5720D4923200B053B1 /* Calendrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD5320D4923100B053B1 /* Calendrier.swift */; };
+		7948CD5820D4923200B053B1 /* ViewControllerCalendrierCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948CD5420D4923200B053B1 /* ViewControllerCalendrierCreate.swift */; };
+		7948CD5B20D4926600B053B1 /* calendrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD5920D4926600B053B1 /* calendrier.png */; };
+		7948CD5C20D4926600B053B1 /* soccer-player.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948CD5A20D4926600B053B1 /* soccer-player.png */; };
+		795565F320F6810900964C40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795565F220F6810900964C40 /* Team.swift */; };
+		7989493F20F8F1FE00FFEC88 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989493E20F8F1FE00FFEC88 /* Competition.swift */; };
+		7989494220F9009D00FFEC88 /* TeamResultatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989494020F9009D00FFEC88 /* TeamResultatTableViewCell.swift */; };
+		7989494320F9009D00FFEC88 /* TeamResultatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989494120F9009D00FFEC88 /* TeamResultatTableViewCell.xib */; };
 		7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995DFDD20BDF37900867930 /* AppHomeViewController.swift */; };
 		7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7995DFDE20BDF37900867930 /* AppHomeViewController.xib */; };
+		7998194920FA22A300FE1247 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998194820FA22A300FE1247 /* Composition.swift */; };
+		7998194C20FA2E3200FE1247 /* CompoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998194A20FA2E3200FE1247 /* CompoViewController.swift */; };
+		7998194D20FA2E3200FE1247 /* CompoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7998194B20FA2E3200FE1247 /* CompoViewController.xib */; };
+		7998194F20FA330E00FE1247 /* CompositionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998194E20FA330E00FE1247 /* CompositionDetails.swift */; };
 		79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */; };
 		79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */; };
 		79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61EB20C2055B00665B3C /* PlayerCreateViewController.swift */; };
 		79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA61EC20C2055B00665B3C /* PlayerCreateViewController.xib */; };
 		79AA61F120C2059100665B3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61F020C2059100665B3C /* Player.swift */; };
 		79AA61F320C2061200665B3C /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61F220C2061200665B3C /* Poste.swift */; };
+		79C79D0520D6E442000F8134 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C79D0320D6E442000F8134 /* CompositionViewController.swift */; };
+		79C79D0620D6E442000F8134 /* CompositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C79D0420D6E442000F8134 /* CompositionViewController.xib */; };
+		79C79D0C20D6F105000F8134 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C79D0B20D6F104000F8134 /* field.png */; };
+		79C79D1020D6FEF2000F8134 /* TitreCompoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C79D0E20D6FEF2000F8134 /* TitreCompoTableViewCell.swift */; };
+		79C79D1120D6FEF2000F8134 /* TitreCompoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C79D0F20D6FEF2000F8134 /* TitreCompoTableViewCell.xib */; };
+		79C79D1420D6FF51000F8134 /* CompoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C79D1220D6FF51000F8134 /* CompoTableViewCell.swift */; };
+		79C79D1520D6FF51000F8134 /* CompoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C79D1320D6FF51000F8134 /* CompoTableViewCell.xib */; };
+		79D3AA0D20F9509000B53540 /* fieldv2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79D3AA0C20F9509000B53540 /* fieldv2.gif */; };
+		79D3AA0F20F951A500B53540 /* fieldv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 79D3AA0E20F951A400B53540 /* fieldv2.png */; };
+		9B70073621A5F7E39A1A35A1 /* Pods_Statia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9636B5A558ACB1E59C1675D /* Pods_Statia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,22 +136,72 @@
 		032156E620D4682600441586 /* GoalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalTableViewCell.xib; sourceTree = "<group>"; };
 		032910D920A1E29F000C93C7 /* background_blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_blue.jpg; sourceTree = "<group>"; };
 		032910DB20A1F1EC000C93C7 /* logo_Statia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_Statia.png; sourceTree = "<group>"; };
-		032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPlayersController.swift; sourceTree = "<group>"; };
-		032910DF20A1F5B9000C93C7 /* TableViewPlayersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewPlayersController.xib; sourceTree = "<group>"; };
+		032910DE20A1F5B9000C93C7 /* TableVViewPlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVViewPlayersController.swift; sourceTree = "<group>"; };
+		032910DF20A1F5B9000C93C7 /* TableVViewPlayersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableVViewPlayersController.xib; sourceTree = "<group>"; };
 		032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellPlayer.swift; sourceTree = "<group>"; };
 		032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellPlayer.xib; sourceTree = "<group>"; };
 		038AB177209A64D1007C79AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		038AB178209A64D1007C79AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsBarPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		0B0CAF6577EBFACB2B039968 /* Pods-Statia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Statia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Statia/Pods-Statia.release.xcconfig"; sourceTree = "<group>"; };
+		209FB7474792D0488017A0C3 /* Pods-Statia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Statia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Statia/Pods-Statia.debug.xcconfig"; sourceTree = "<group>"; };
+		79037A1C20F6589E007B83E6 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
+		7928F45620EB82F5005EA8CB /* Alamoquest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamoquest.swift; sourceTree = "<group>"; };
+		7928F45820EB8466005EA8CB /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		7928F46320EB9F98005EA8CB /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		7928F46420EB9F98005EA8CB /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
+		7928F46720EBA03B005EA8CB /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		7928F46820EBA03B005EA8CB /* TeamTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewController.xib; sourceTree = "<group>"; };
+		79383F1620F6BFC500B9381E /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		79383F1920F6CBAE00B9381E /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		79383F1A20F6CBAE00B9381E /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
+		79383F1D20F7966300B9381E /* ResultatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultatViewController.swift; sourceTree = "<group>"; };
+		79383F1E20F7966300B9381E /* ResultatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultatViewController.xib; sourceTree = "<group>"; };
+		79383F2120F8219D00B9381E /* ResultatSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultatSecondViewController.swift; sourceTree = "<group>"; };
+		79383F2220F8219D00B9381E /* ResultatSecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultatSecondViewController.xib; sourceTree = "<group>"; };
+		79383F2520F82FB900B9381E /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		7940285F20F6206600E518C7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7948CD4120D491FD00B053B1 /* TableViewCellEffectif.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellEffectif.xib; sourceTree = "<group>"; };
+		7948CD4220D491FD00B053B1 /* CalendrierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendrierViewController.xib; sourceTree = "<group>"; };
+		7948CD4320D491FD00B053B1 /* EffectifTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EffectifTableViewCell.xib; sourceTree = "<group>"; };
+		7948CD4420D491FD00B053B1 /* EffectifTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectifTableViewCell.swift; sourceTree = "<group>"; };
+		7948CD4520D491FD00B053B1 /* TableViewCellCalendrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellCalendrier.swift; sourceTree = "<group>"; };
+		7948CD4620D491FD00B053B1 /* TableViewCellEffectif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellEffectif.swift; sourceTree = "<group>"; };
+		7948CD4720D491FE00B053B1 /* TableViewCellCalendrier.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCalendrier.xib; sourceTree = "<group>"; };
+		7948CD4820D491FE00B053B1 /* CalendrierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendrierViewController.swift; sourceTree = "<group>"; };
+		7948CD5120D4923100B053B1 /* CalendrierCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendrierCreateViewController.swift; path = Models/CalendrierCreateViewController.swift; sourceTree = "<group>"; };
+		7948CD5220D4923100B053B1 /* CalendrierCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendrierCreateViewController.xib; path = Models/CalendrierCreateViewController.xib; sourceTree = "<group>"; };
+		7948CD5320D4923100B053B1 /* Calendrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calendrier.swift; path = Models/Calendrier.swift; sourceTree = "<group>"; };
+		7948CD5420D4923200B053B1 /* ViewControllerCalendrierCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerCalendrierCreate.swift; path = Models/ViewControllerCalendrierCreate.swift; sourceTree = "<group>"; };
+		7948CD5920D4926600B053B1 /* calendrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendrier.png; sourceTree = "<group>"; };
+		7948CD5A20D4926600B053B1 /* soccer-player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soccer-player.png"; sourceTree = "<group>"; };
+		795565F220F6810900964C40 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		7989493E20F8F1FE00FFEC88 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		7989494020F9009D00FFEC88 /* TeamResultatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultatTableViewCell.swift; sourceTree = "<group>"; };
+		7989494120F9009D00FFEC88 /* TeamResultatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamResultatTableViewCell.xib; sourceTree = "<group>"; };
 		7995DFDD20BDF37900867930 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		7995DFDE20BDF37900867930 /* AppHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHomeViewController.xib; sourceTree = "<group>"; };
+		7998194820FA22A300FE1247 /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		7998194A20FA2E3200FE1247 /* CompoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoViewController.swift; sourceTree = "<group>"; };
+		7998194B20FA2E3200FE1247 /* CompoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompoViewController.xib; sourceTree = "<group>"; };
+		7998194E20FA330E00FE1247 /* CompositionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionDetails.swift; sourceTree = "<group>"; };
 		79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectifViewController.swift; sourceTree = "<group>"; };
 		79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectifViewController.xib; sourceTree = "<group>"; };
 		79AA61EB20C2055B00665B3C /* PlayerCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreateViewController.swift; sourceTree = "<group>"; };
 		79AA61EC20C2055B00665B3C /* PlayerCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCreateViewController.xib; sourceTree = "<group>"; };
 		79AA61F020C2059100665B3C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		79AA61F220C2061200665B3C /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
+		79C79D0320D6E442000F8134 /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
+		79C79D0420D6E442000F8134 /* CompositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompositionViewController.xib; sourceTree = "<group>"; };
+		79C79D0B20D6F104000F8134 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
+		79C79D0E20D6FEF2000F8134 /* TitreCompoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitreCompoTableViewCell.swift; sourceTree = "<group>"; };
+		79C79D0F20D6FEF2000F8134 /* TitreCompoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitreCompoTableViewCell.xib; sourceTree = "<group>"; };
+		79C79D1220D6FF51000F8134 /* CompoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoTableViewCell.swift; sourceTree = "<group>"; };
+		79C79D1320D6FF51000F8134 /* CompoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompoTableViewCell.xib; sourceTree = "<group>"; };
+		79D3AA0C20F9509000B53540 /* fieldv2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fieldv2.gif; sourceTree = "<group>"; };
+		79D3AA0E20F951A400B53540 /* fieldv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fieldv2.png; sourceTree = "<group>"; };
+		A9636B5A558ACB1E59C1675D /* Pods_Statia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Statia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B70073621A5F7E39A1A35A1 /* Pods_Statia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +219,11 @@
 		0315FAAF2091265700CA5DB0 = {
 			isa = PBXGroup;
 			children = (
+				7940285F20F6206600E518C7 /* Default-568h@2x.png */,
 				0315FABA2091265700CA5DB0 /* Statia */,
 				0315FAB92091265700CA5DB0 /* Products */,
+				66711144B4031F92620AB4A9 /* Frameworks */,
+				B121D550CC302D7ADFF01901 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +238,18 @@
 		0315FABA2091265700CA5DB0 /* Statia */ = {
 			isa = PBXGroup;
 			children = (
+				7948CD5320D4923100B053B1 /* Calendrier.swift */,
+				7948CD5120D4923100B053B1 /* CalendrierCreateViewController.swift */,
+				7948CD5220D4923100B053B1 /* CalendrierCreateViewController.xib */,
+				7948CD5420D4923200B053B1 /* ViewControllerCalendrierCreate.swift */,
+				7948CD4820D491FE00B053B1 /* CalendrierViewController.swift */,
+				7948CD4220D491FD00B053B1 /* CalendrierViewController.xib */,
+				7948CD4420D491FD00B053B1 /* EffectifTableViewCell.swift */,
+				7948CD4320D491FD00B053B1 /* EffectifTableViewCell.xib */,
+				7948CD4520D491FD00B053B1 /* TableViewCellCalendrier.swift */,
+				7948CD4720D491FE00B053B1 /* TableViewCellCalendrier.xib */,
+				7948CD4620D491FD00B053B1 /* TableViewCellEffectif.swift */,
+				7948CD4120D491FD00B053B1 /* TableViewCellEffectif.xib */,
 				032156B320CBCC8800441586 /* Cells */,
 				79AA61EF20C2056300665B3C /* Models */,
 				79AA61EA20C2054200665B3C /* Players */,
@@ -149,8 +263,8 @@
 				0315FAC72091265800CA5DB0 /* LaunchScreen.storyboard */,
 				0315FACA2091265800CA5DB0 /* Info.plist */,
 				0315FAC22091265800CA5DB0 /* Statia.xcdatamodeld */,
-				032910DE20A1F5B9000C93C7 /* TableViewPlayersController.swift */,
-				032910DF20A1F5B9000C93C7 /* TableViewPlayersController.xib */,
+				032910DE20A1F5B9000C93C7 /* TableVViewPlayersController.swift */,
+				032910DF20A1F5B9000C93C7 /* TableVViewPlayersController.xib */,
 				032910E220A3A287000C93C7 /* TableViewCellPlayer.swift */,
 				032910E320A3A287000C93C7 /* TableViewCellPlayer.xib */,
 				7995DFDD20BDF37900867930 /* AppHomeViewController.swift */,
@@ -159,6 +273,17 @@
 				79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */,
 				032156B920CD62A900441586 /* TableViewStatsPlayerController.swift */,
 				032156BA20CD62A900441586 /* TableViewStatsPlayerController.xib */,
+				79C79D0320D6E442000F8134 /* CompositionViewController.swift */,
+				79C79D0420D6E442000F8134 /* CompositionViewController.xib */,
+				7928F45620EB82F5005EA8CB /* Alamoquest.swift */,
+				7928F46720EBA03B005EA8CB /* TeamTableViewController.swift */,
+				7928F46820EBA03B005EA8CB /* TeamTableViewController.xib */,
+				79383F1D20F7966300B9381E /* ResultatViewController.swift */,
+				79383F1E20F7966300B9381E /* ResultatViewController.xib */,
+				79383F2120F8219D00B9381E /* ResultatSecondViewController.swift */,
+				79383F2220F8219D00B9381E /* ResultatSecondViewController.xib */,
+				7998194A20FA2E3200FE1247 /* CompoViewController.swift */,
+				7998194B20FA2E3200FE1247 /* CompoViewController.xib */,
 			);
 			path = Statia;
 			sourceTree = "<group>";
@@ -166,6 +291,9 @@
 		032156B320CBCC8800441586 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				79383F1820F6CB8B00B9381E /* Match */,
+				7928F45A20EB9E28005EA8CB /* Team */,
+				79C79D0D20D6FDC4000F8134 /* Composition */,
 				032156B420CBCC9500441586 /* StatsPlayer */,
 			);
 			path = Cells;
@@ -201,12 +329,45 @@
 		032910D820A1DD92000C93C7 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				79D3AA0E20F951A400B53540 /* fieldv2.png */,
+				79D3AA0C20F9509000B53540 /* fieldv2.gif */,
+				79C79D0B20D6F104000F8134 /* field.png */,
+				7948CD5920D4926600B053B1 /* calendrier.png */,
+				7948CD5A20D4926600B053B1 /* soccer-player.png */,
 				032156DD20D435D200441586 /* red_card.png */,
 				032156DE20D435D200441586 /* yellow_card.png */,
 				032910DB20A1F1EC000C93C7 /* logo_Statia.png */,
 				032910D920A1E29F000C93C7 /* background_blue.jpg */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		66711144B4031F92620AB4A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9636B5A558ACB1E59C1675D /* Pods_Statia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7928F45A20EB9E28005EA8CB /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				7928F46320EB9F98005EA8CB /* TeamTableViewCell.swift */,
+				7928F46420EB9F98005EA8CB /* TeamTableViewCell.xib */,
+				7989494020F9009D00FFEC88 /* TeamResultatTableViewCell.swift */,
+				7989494120F9009D00FFEC88 /* TeamResultatTableViewCell.xib */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		79383F1820F6CB8B00B9381E /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				79383F1920F6CBAE00B9381E /* MatchTableViewCell.swift */,
+				79383F1A20F6CBAE00B9381E /* MatchTableViewCell.xib */,
+			);
+			path = Match;
 			sourceTree = "<group>";
 		};
 		79AA61EA20C2054200665B3C /* Players */ = {
@@ -223,8 +384,36 @@
 			children = (
 				79AA61F020C2059100665B3C /* Player.swift */,
 				79AA61F220C2061200665B3C /* Poste.swift */,
+				7928F45820EB8466005EA8CB /* Club.swift */,
+				79037A1C20F6589E007B83E6 /* Coach.swift */,
+				795565F220F6810900964C40 /* Team.swift */,
+				79383F1620F6BFC500B9381E /* Match.swift */,
+				79383F2520F82FB900B9381E /* League.swift */,
+				7989493E20F8F1FE00FFEC88 /* Competition.swift */,
+				7998194820FA22A300FE1247 /* Composition.swift */,
+				7998194E20FA330E00FE1247 /* CompositionDetails.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		79C79D0D20D6FDC4000F8134 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				79C79D0E20D6FEF2000F8134 /* TitreCompoTableViewCell.swift */,
+				79C79D0F20D6FEF2000F8134 /* TitreCompoTableViewCell.xib */,
+				79C79D1220D6FF51000F8134 /* CompoTableViewCell.swift */,
+				79C79D1320D6FF51000F8134 /* CompoTableViewCell.xib */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		B121D550CC302D7ADFF01901 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				209FB7474792D0488017A0C3 /* Pods-Statia.debug.xcconfig */,
+				0B0CAF6577EBFACB2B039968 /* Pods-Statia.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +423,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0315FACD2091265800CA5DB0 /* Build configuration list for PBXNativeTarget "Statia" */;
 			buildPhases = (
+				09D38983929ABFA51270354A /* [CP] Check Pods Manifest.lock */,
 				0315FAB42091265700CA5DB0 /* Sources */,
 				0315FAB52091265700CA5DB0 /* Frameworks */,
 				0315FAB62091265700CA5DB0 /* Resources */,
+				9D8DA88F3F86A41616810510 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,60 +477,152 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7928F46620EB9F98005EA8CB /* TeamTableViewCell.xib in Resources */,
 				03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */,
+				79C79D0620D6E442000F8134 /* CompositionViewController.xib in Resources */,
 				79AA61EE20C2055B00665B3C /* PlayerCreateViewController.xib in Resources */,
 				032156C420CDD0B000441586 /* PlayTimeTableViewCell.xib in Resources */,
+				79C79D0C20D6F105000F8134 /* field.png in Resources */,
 				032156BC20CD62A900441586 /* TableViewStatsPlayerController.xib in Resources */,
 				032910E520A3A287000C93C7 /* TableViewCellPlayer.xib in Resources */,
+				7948CD4B20D491FE00B053B1 /* EffectifTableViewCell.xib in Resources */,
+				7948CD5B20D4926600B053B1 /* calendrier.png in Resources */,
 				0315FAC92091265800CA5DB0 /* LaunchScreen.storyboard in Resources */,
+				7948CD4920D491FE00B053B1 /* TableViewCellEffectif.xib in Resources */,
+				79383F2420F8219D00B9381E /* ResultatSecondViewController.xib in Resources */,
+				7948CD4F20D491FE00B053B1 /* TableViewCellCalendrier.xib in Resources */,
 				032156E420D45D0C00441586 /* HealthTableViewCell.xib in Resources */,
+				79D3AA0D20F9509000B53540 /* fieldv2.gif in Resources */,
+				79C79D1520D6FF51000F8134 /* CompoTableViewCell.xib in Resources */,
 				032156D020D0653400441586 /* LastPassTableViewCell.xib in Resources */,
 				032156C820CF1BC800441586 /* SeasonResultsTableViewCell.xib in Resources */,
 				032156C020CDC8F600441586 /* ResponsibleTableViewCell.xib in Resources */,
 				032910DA20A1E29F000C93C7 /* background_blue.jpg in Resources */,
+				7989494320F9009D00FFEC88 /* TeamResultatTableViewCell.xib in Resources */,
 				032156CC20CF24C200441586 /* ButsTableViewCell.xib in Resources */,
 				032156D820D313A100441586 /* CardsTableViewCell.xib in Resources */,
+				7948CD5620D4923200B053B1 /* CalendrierCreateViewController.xib in Resources */,
 				032910DC20A1F1ED000C93C7 /* logo_Statia.png in Resources */,
+				79D3AA0F20F951A500B53540 /* fieldv2.png in Resources */,
+				79383F1C20F6CBAE00B9381E /* MatchTableViewCell.xib in Resources */,
+				7928F46A20EBA03B005EA8CB /* TeamTableViewController.xib in Resources */,
 				0315FAC62091265800CA5DB0 /* Assets.xcassets in Resources */,
-				032910E120A1F5B9000C93C7 /* TableViewPlayersController.xib in Resources */,
+				032910E120A1F5B9000C93C7 /* TableVViewPlayersController.xib in Resources */,
+				7948CD4A20D491FE00B053B1 /* CalendrierViewController.xib in Resources */,
 				79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */,
 				0315FAC12091265700CA5DB0 /* Main.storyboard in Resources */,
 				7995DFE020BDF37900867930 /* AppHomeViewController.xib in Resources */,
 				032156B820CBCDA800441586 /* StatsInfoPlayerTableViewCell.xib in Resources */,
+				7940286020F6206700E518C7 /* Default-568h@2x.png in Resources */,
 				032156E820D4682600441586 /* GoalTableViewCell.xib in Resources */,
 				032156DF20D435D300441586 /* red_card.png in Resources */,
+				7948CD5C20D4926600B053B1 /* soccer-player.png in Resources */,
 				038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */,
 				032156E020D435D300441586 /* yellow_card.png in Resources */,
+				7998194D20FA2E3200FE1247 /* CompoViewController.xib in Resources */,
+				79383F2020F7966300B9381E /* ResultatViewController.xib in Resources */,
+				79C79D1120D6FEF2000F8134 /* TitreCompoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09D38983929ABFA51270354A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Statia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8DA88F3F86A41616810510 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Statia/Pods-Statia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Statia/Pods-Statia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0315FAB42091265700CA5DB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79C79D1020D6FEF2000F8134 /* TitreCompoTableViewCell.swift in Sources */,
+				7948CD4E20D491FE00B053B1 /* TableViewCellEffectif.swift in Sources */,
+				79383F2320F8219D00B9381E /* ResultatSecondViewController.swift in Sources */,
+				795565F320F6810900964C40 /* Team.swift in Sources */,
+				7948CD5520D4923200B053B1 /* CalendrierCreateViewController.swift in Sources */,
+				79383F2620F82FB900B9381E /* League.swift in Sources */,
+				79037A1D20F6589F007B83E6 /* Coach.swift in Sources */,
 				032910E420A3A287000C93C7 /* TableViewCellPlayer.swift in Sources */,
 				7995DFDF20BDF37900867930 /* AppHomeViewController.swift in Sources */,
 				032156E320D45D0C00441586 /* HealthTableViewCell.swift in Sources */,
 				032156C720CF1BC800441586 /* SeasonResultsTableViewCell.swift in Sources */,
+				7989493F20F8F1FE00FFEC88 /* Competition.swift in Sources */,
+				7948CD4D20D491FE00B053B1 /* TableViewCellCalendrier.swift in Sources */,
+				7998194F20FA330E00FE1247 /* CompositionDetails.swift in Sources */,
+				7928F45920EB8466005EA8CB /* Club.swift in Sources */,
 				032156BF20CDC8F600441586 /* ResponsibleTableViewCell.swift in Sources */,
 				032156B720CBCDA800441586 /* StatsInfoPlayerTableViewCell.swift in Sources */,
 				79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */,
 				79AA61ED20C2055B00665B3C /* PlayerCreateViewController.swift in Sources */,
 				0315FABE2091265700CA5DB0 /* ViewController.swift in Sources */,
+				7928F46920EBA03B005EA8CB /* TeamTableViewController.swift in Sources */,
 				0315FABC2091265700CA5DB0 /* AppDelegate.swift in Sources */,
-				032910E020A1F5B9000C93C7 /* TableViewPlayersController.swift in Sources */,
+				032910E020A1F5B9000C93C7 /* TableVViewPlayersController.swift in Sources */,
+				7928F46520EB9F98005EA8CB /* TeamTableViewCell.swift in Sources */,
+				7998194C20FA2E3200FE1247 /* CompoViewController.swift in Sources */,
 				0315FAC42091265800CA5DB0 /* Statia.xcdatamodeld in Sources */,
+				7948CD5820D4923200B053B1 /* ViewControllerCalendrierCreate.swift in Sources */,
 				032156D720D313A100441586 /* CardsTableViewCell.swift in Sources */,
+				7948CD5720D4923200B053B1 /* Calendrier.swift in Sources */,
+				7948CD4C20D491FE00B053B1 /* EffectifTableViewCell.swift in Sources */,
+				79C79D1420D6FF51000F8134 /* CompoTableViewCell.swift in Sources */,
 				79AA61F320C2061200665B3C /* Poste.swift in Sources */,
+				79383F1B20F6CBAE00B9381E /* MatchTableViewCell.swift in Sources */,
 				032156BB20CD62A900441586 /* TableViewStatsPlayerController.swift in Sources */,
+				7998194920FA22A300FE1247 /* Composition.swift in Sources */,
 				79AA61F120C2059100665B3C /* Player.swift in Sources */,
+				7928F45720EB82F5005EA8CB /* Alamoquest.swift in Sources */,
+				7989494220F9009D00FFEC88 /* TeamResultatTableViewCell.swift in Sources */,
+				7948CD5020D491FE00B053B1 /* CalendrierViewController.swift in Sources */,
 				032156E720D4682600441586 /* GoalTableViewCell.swift in Sources */,
 				038AB179209A64D1007C79AE /* HomeViewController.swift in Sources */,
 				032156CB20CF24C200441586 /* ButsTableViewCell.swift in Sources */,
+				79383F1F20F7966300B9381E /* ResultatViewController.swift in Sources */,
 				032156C320CDD0B000441586 /* PlayTimeTableViewCell.swift in Sources */,
+				79383F1720F6BFC500B9381E /* Match.swift in Sources */,
+				79C79D0520D6E442000F8134 /* CompositionViewController.swift in Sources */,
 				032156CF20D0653400441586 /* LastPassTableViewCell.swift in Sources */,
 				03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */,
 			);
@@ -480,10 +763,12 @@
 		};
 		0315FACE2091265800CA5DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209FB7474792D0488017A0C3 /* Pods-Statia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Statia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.statia.Statia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,10 +779,12 @@
 		};
 		0315FACF2091265800CA5DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0CAF6577EBFACB2B039968 /* Pods-Statia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Statia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.statia.Statia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
