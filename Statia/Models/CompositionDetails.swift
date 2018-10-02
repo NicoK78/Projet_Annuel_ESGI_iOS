@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import SwiftyJSON
 
 class CompositionDetails : Mappable {
     
@@ -27,7 +28,7 @@ class CompositionDetails : Mappable {
         isSub <- map["is_sub"]
     }
     
-    func toJsonCreate() -> [String: Any] {
+    func toJsonCreate() -> JSON {
         if (player == nil){
             player = Player()
         }

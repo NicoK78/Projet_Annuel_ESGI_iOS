@@ -53,7 +53,7 @@ class PlayerCreateViewController: UIViewController , UIPickerViewDelegate , UIPi
         self.pickerPoste.dataSource = self
         pickerBirthday.isHidden = true
         pickerPoste.isHidden = true
-        pickerBirthday.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
+        //pickerBirthday.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
         //pickerBirthday.addTarget(self, action: #selector(hideDateBirth(<#Any#>)), for: .touchUpOutside)
         // Do any additional setup after loading the view.
         self.pickerPoste.backgroundColor = UIColor.white
@@ -66,7 +66,32 @@ class PlayerCreateViewController: UIViewController , UIPickerViewDelegate , UIPi
             }
             self.pickerPoste.reloadAllComponents()
         }
+        
+        let datePicker = UIDatePicker()
+        datePicker.timeZone = TimeZone(abbreviation: "UTC")
+        datePicker.locale = Locale(identifier: "FR-fr")
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        
+        self.birthdayLabel.inputView = datePicker
+        self.birthdayLabel.inputAccessoryView = toolBar
     }
+    
+    @objc func donePicker(sender: UIBarButtonItem){
+        self.birthdayLabel.resignFirstResponder()
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,8 +147,7 @@ class PlayerCreateViewController: UIViewController , UIPickerViewDelegate , UIPi
     }
     
     @IBAction func showPickerBirthday(_ sender:Any){
-        pickerBirthday.isHidden = false
-        pickerPoste.isHidden = true
+        self.birthdayLabel.resignFirstResponder()
     }
     
     
@@ -181,16 +205,16 @@ class PlayerCreateViewController: UIViewController , UIPickerViewDelegate , UIPi
     }
     
     func formToPlayer(){
-        self.player.name = labelNom.text!
-        self.player.firstname = labelPrenom.text!
+        self.player.user.name = labelNom.text!
+        self.player.user.firstname = labelPrenom.text!
         //birthdayLabel.text = self.player.b
         self.player.poste = posteLabel.text!
         self.player.strongFoot = piedFortLabel.text!
         self.player.mobile = portableLabel.text!
-        self.player.email = emailLabel.text!
+        self.player.user.email = emailLabel.text!
         
         let idTeam = UserDefaults.standard.integer(forKey: "team")
-        self.player.idTeam = idTeam
+        self.player.team.id = idTeam
     }
     
     
@@ -216,4 +240,5 @@ extension Date {
         
         return age
     }
+    
 }

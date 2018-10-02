@@ -9,7 +9,8 @@
 import UIKit
 
 class CompoTableViewCell: UITableViewCell {
-
+    @IBOutlet var gardienBtn: UIButton!
+    
     @IBOutlet  var dGaucheBtn: UIButton!
     @IBOutlet  var gCentreBtn: UIButton!
     @IBOutlet  var dCentreBtn: UIButton!
@@ -41,6 +42,7 @@ class CompoTableViewCell: UITableViewCell {
     @IBOutlet var mdLabel: UILabel!
     @IBOutlet var acgLabel: UILabel!
     @IBOutlet var acdLabel: UILabel!
+    @IBOutlet var gardienLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -41,7 +41,20 @@ class TeamTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let barbutton = UIBarButtonItem(image: UIImage(named: "logout.png"), style: .done, target: self, action: #selector(Deconnect))
+        self.tabBarController?.navigationItem.leftBarButtonItem = barbutton //UIBarButtonItem(title: "Deco", style: .done, target: self, action: #selector(Deconnect))
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+    }
+    
 
+    
+    @objc func Deconnect(){
+        self.navigationController?.popToRootViewController(animated: true)
+       
+    }
     // MARK: - Table view data source
 
     /*override func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,6 +95,9 @@ class TeamTableViewController: UITableViewController {
             self.present(alert, animated: true)
         }
     }
+    
+    
+    
     
     
  

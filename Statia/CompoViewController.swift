@@ -12,6 +12,7 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     var compoArray = [Composition]()
+    var composDefaut = [Composition]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,49 +69,145 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc func createCompo(){
-        let alert = UIAlertController(title: "Composition", message: "Creer une composition.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\n\n\n\n\n\n", message: "Composition par défaut", preferredStyle: .actionSheet)
         
+        var margin:CGFloat = 10.0
+
+        let rect = CGRect(x: margin, y: margin, width: alert.view.bounds.size.width - margin * 4.0, height: 100.0)
+        let customView = UIView(frame: rect)
+        
+        customView.backgroundColor = UIColor.clear
+        
+        for (index, compo) in self.composDefaut.enumerated() {
+            print("INDEX - \(index)")
+            let buttonTest = UIButton(frame: CGRect(x: margin + CGFloat(10.0 + Double.init(index * 75)), y: margin, width: 70, height: 30))
+            buttonTest.backgroundColor = UIColor.clear
+            buttonTest.setTitleColor(UIColor.darkText, for: .normal)
+            buttonTest.tag = compo.id
+            buttonTest.setTitle(compo.name, for: .normal)
+            buttonTest.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            
+            customView.addSubview(buttonTest)
+        }
+
+        
+        alert.view.addSubview(customView)
+
+        alert.addAction(UIAlertAction(title: "Creer une nouvelle composition", style: .default, handler: newCompo))
+        alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    @objc func buttonAction(sender: UIButton!){
+        
+        self.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Choisir le \((sender.titleLabel?.text)!)", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { action in
+            let alert = UIAlertController(title: "Nouvelle composition", message:nil, preferredStyle: .alert)
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Nom de la composition"
+                textField.text = "\((sender.titleLabel?.text)!)"
+            }
+            
+            alert.addAction(UIAlertAction(title: "Valider", style: .default, handler: {action in
+                var idTeam = UserDefaults.standard.integer(forKey: "team")
+                
+                var compo = Composition()
+                let team = Team()
+                team.id = idTeam
+                compo.team = team
+                let txt = alert.textFields![0] as! UITextField
+                let create = CompositionViewController()
+                compo.name = txt.text!
+                
+                print(compo.toJsonCreate())
+                Alamoquest.postComposition(compo: compo) { (composition) in
+                    print("Sucess : \(compo.toJsonCreate())")
+                    create.compo = composition
+                    create.mode = sender.tag
+                    if (composition.name == ""){
+                        let alert = UIAlertController(title: "Attention", message:"Changer le nom de la composition.", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        return
+                    }
+                    self.navigationController?.pushViewController(create, animated: true)
+                }
+                
+                
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Annuler", style: .default, handler: {action in
+            self.dismiss(animated: true, completion: nil)
+            self.createCompo()
+            
+            
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func newCompo(sender: UIAlertAction){
+        let alert = UIAlertController(title: "Nouvelle composition", message:nil, preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Nom de la composition"
         }
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {action in
+        alert.addAction(UIAlertAction(title: "Valider", style: .default, handler: {action in
             var idTeam = UserDefaults.standard.integer(forKey: "team")
 
             var compo = Composition()
             let team = Team()
             team.id = idTeam
             compo.team = team
-            
+
             let txt = alert.textFields![0] as! UITextField
             let create = CompositionViewController()
             compo.name = txt.text!
-            
+
             print(compo.toJsonCreate())
             Alamoquest.postComposition(compo: compo) { (compo) in
                 print("Sucess : \(compo.toJsonCreate())")
                 create.compo = compo
                 self.navigationController?.pushViewController(create, animated: true)
             }
-            
-            
+
+
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createCompo))
         self.compoArray.removeAll()
+        self.composDefaut.removeAll()
         let idTeam = UserDefaults.standard.integer(forKey: "team")
-        Alamoquest.getCompoByTeam(idteam: idTeam) { (compos) in
+        Alamoquest.getCompoDefault { (compos) in
             for compo in compos {
-                self.compoArray.append(compo)
+                self.composDefaut.append(compo)
+//                self.compoArray.append(compo)
             }
-            self.tableView.reloadData()
+            Alamoquest.getCompoByTeam(idteam: idTeam) { (compos) in
+                for compo in compos {
+                    self.compoArray.append(compo)
+                }
+                self.tableView.reloadData()
+            }
         }
+        
     }
 
     /*

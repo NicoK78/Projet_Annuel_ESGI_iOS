@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -22,6 +23,8 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet var labelDomicile: UILabel!
     
     @IBOutlet var labelExterieur: UILabel!
+    @IBOutlet var txtFDay: UITextField!
+    @IBOutlet var lblDay: UILabel!
     
     var teamsTable = [Team]()
     var teamVs = Team()
@@ -65,6 +68,9 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
             initMatchUpdate(match: self.matchUpdate)
         }
         
+       // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
        
     }
 
@@ -102,6 +108,22 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         //self.pickerView.isHidden = true
     }
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     
     
     @IBAction func setLieu(sender: UIButton!){
@@ -111,25 +133,34 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
             btnChampionnat.backgroundColor = UIColor.clear
             btnAmical.backgroundColor = UIColor.clear
             self.idCompet = 2
+            self.txtFDay.isHidden = true
+            self.lblDay.isHidden = true
         }else if(btnSender.tag == 1){
             btnCoupe.backgroundColor = UIColor.clear
             btnChampionnat.backgroundColor = UIColor.lightGray
             btnAmical.backgroundColor = UIColor.clear
             self.idCompet = 3
+            self.txtFDay.isHidden = false
+            self.lblDay.isHidden = false
         }else if(btnSender.tag == 2){
             btnCoupe.backgroundColor = UIColor.clear
             btnChampionnat.backgroundColor = UIColor.clear
             btnAmical.backgroundColor = UIColor.lightGray
             self.idCompet = 1
+            self.txtFDay.isHidden = true
+            self.lblDay.isHidden = true
         }
     }
     
     @IBAction func changeSwitch(sender: UITapGestureRecognizer!){
         let label = sender.view as! UILabel
+        let zoom = AnimationType.zoom(scale: 0.5)
         if(label.tag == 0){
             self.switchLieu.setOn(false, animated: true)
+            self.labelDomicile.animate(animations: [zoom])
         }else if(label.tag == 1){
             self.switchLieu.setOn(true, animated: true)
+            self.labelExterieur.animate(animations: [zoom])
         }
     }
     
@@ -211,8 +242,8 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         
         switchLieu.setOn(false, animated: false)
         if(self.mode == 0){
-            btnChampionnat.backgroundColor = UIColor.lightGray
-            self.idCompet = 3
+            btnCoupe.backgroundColor = UIColor.lightGray
+            self.idCompet = 2
         }
 
         
@@ -282,6 +313,7 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         case 2:
             self.btnCoupe.backgroundColor = UIColor.lightGray
             self.idCompet = 2
+
         case 3:
             self.btnChampionnat.backgroundColor = UIColor.lightGray
             self.idCompet = 3

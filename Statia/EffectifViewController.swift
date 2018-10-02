@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class EffectifViewController: UIViewController , UITableViewDelegate , UITableViewDataSource  {
     
@@ -31,10 +32,94 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.playersTab.count
+        var temp = 0
+        switch section {
+        case 0:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Gardien")){
+                    temp += 1
+                }
+            }
+            return temp
+        case 1:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Défenseur")){
+                    temp += 1
+                }
+            }
+            return temp
+        case 2:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Milieu")){
+                    temp += 1
+                }
+            }
+            return temp
+        case 3:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Attaquant")){
+                    temp += 1
+                }
+            }
+            return temp
+        default:
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Gardien"
+        case 1:
+            return "Défenseur"
+        case 2:
+            return "Milieux"
+        case 3:
+            return "Attaquant"
+        default:
+            return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var playerTabTemp = [Player]()
+        switch indexPath.section {
+        case 0:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Gardien")){
+                    playerTabTemp.append(player)
+                }
+            }
+
+        case 1:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Défenseur")){
+                    playerTabTemp.append(player)
+                }
+            }
+
+        case 2:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Milieu")){
+                    playerTabTemp.append(player)
+                }
+            }
+
+        case 3:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Attaquant")){
+                    playerTabTemp.append(player)
+                }
+            }
+
+        default:
+            break
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "EffectifCell" ,for: indexPath) as! TableViewCellEffectif
         /*if cell == nil{
             if let effectifCell = cell as? EffectifTableViewCell {
@@ -44,9 +129,9 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
             }
             
         }*/
-        cell.labelNom.text = self.playersTab[indexPath.row].name
-        cell.labelPrenom.text = self.playersTab[indexPath.row].firstname
-        cell.labelPoste.text = self.playersTab[indexPath.row].poste
+        cell.labelNom.text = playerTabTemp[indexPath.row].user.name
+        cell.labelPrenom.text = playerTabTemp[indexPath.row].user.firstname
+        cell.labelPoste.text = playerTabTemp[indexPath.row].poste
         cell.photoProfil.image = UIImage(named: "soccer-player.png")!
 
         //cell = EffectifTableViewCell(style: .default, reuseIdentifier: "EffectifCell")
@@ -61,11 +146,12 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 70
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tableViewEffectif.isHidden = true
         self.playersTab.removeAll()
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlayer))
         print(UserDefaults.standard.integer(forKey: "team"))
@@ -73,10 +159,61 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
         Alamoquest.getPlayerByTeam(id: idTeam) { (players) in
             for player in players{
                 self.playersTab.append(player)
-                self.tableViewEffectif.reloadData()
+                
             }
             
+            self.tableViewEffectif.reloadData()
+            self.tableViewEffectif.isHidden = false
+            let cells = self.tableViewEffectif.visibleCells
+            let zoomAnimation = AnimationType.zoom(scale: 0.5)
+            let fromAnimation = AnimationType.from(direction: .right, offset: 60.0)
+            UIView.animate(views: cells, animations: [zoomAnimation], duration: 0.3)
+            
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        var playerTabTemp = [Player]()
+        switch indexPath.section {
+        case 0:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Gardien")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 1:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Défenseur")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 2:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Milieu")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 3:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Attaquant")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        default:
+            break
+        }
+        let update = UITableViewRowAction(style: .normal, title: "Modifier") { (action, indexPath) in
+            let  updatePlayer = PlayerCreateV2ViewController()
+            updatePlayer.mode = 1
+            updatePlayer.player = playerTabTemp[indexPath.row]
+            self.navigationController?.pushViewController(updatePlayer, animated: true)
+        }
+        
+        return [update]
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +222,9 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
     }
     
     @objc private func addPlayer(){
-        let playerCreate = PlayerCreateViewController(nibName: "PlayerCreateViewController", bundle: nil)
+//        let playerCreate = PlayerCreateViewController(nibName: "PlayerCreateViewController", bundle: nil)
+//        self.navigationController?.pushViewController(playerCreate, animated: true)
+        let playerCreate = PlayerCreateV2ViewController()
         self.navigationController?.pushViewController(playerCreate, animated: true)
     }
     

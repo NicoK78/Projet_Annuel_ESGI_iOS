@@ -58,6 +58,11 @@ class HomeViewController: UIViewController {
                 "password":"soleil78"
             ]
             
+//            let parameter: Parameters = [
+//                "username":username ?? "",
+//                "password":password ?? ""
+//            ]
+            
             Alamoquest.login(parameter: parameter, completionHandler: { (json) in
                 print("JSON : \(json)")
                 if (json == false){
