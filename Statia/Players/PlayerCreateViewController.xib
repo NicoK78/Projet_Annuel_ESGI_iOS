@@ -47,7 +47,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="hideDateBirth:" destination="-1" eventType="editingDidEnd" id="7Jc-uC-A9Q"/>
                         <action selector="showPickerBirthday:" destination="-1" eventType="touchDown" id="a2O-lj-Fb0"/>
                     </connections>
                 </textField>
@@ -56,10 +55,6 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="hidePickerPoste:" destination="-1" eventType="editingDidEnd" id="wAd-mS-DRI"/>
-                        <action selector="showPickerPoste:" destination="-1" eventType="touchDown" id="OLg-Q5-brK"/>
-                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pied fort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CH4-eH-ZID">
                     <rect key="frame" x="0.0" y="325" width="375" height="30"/>

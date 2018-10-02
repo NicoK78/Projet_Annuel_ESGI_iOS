@@ -13,10 +13,24 @@ import SwiftyJSON
 
 public class Alamoquest{
     
+    
+    
     let headers: HTTPHeaders = [
         "X-CSRFToken": "TjoxdRteZJJtL6K1wCk6xcBq4QyBz8LORRttJcf5OkOLgvxNlHsAthSt1cC8Gtrm",
         "Content-Type": "application/json"
     ]
+    
+    class func logout(view: ViewController){
+        let alert = UIAlertController(title: "Déconnection", message: "Etes vous sur ?", preferredStyle: .alert)
+        
+        
+        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action) in
+            view.navigationController?.popToRootViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Non", style: .default, handler: nil))
+        
+        view.present(alert, animated: true)
+    }
     
     
     
@@ -72,9 +86,17 @@ public class Alamoquest{
     
     
     class func postPlayer(player:Player, completionHandler: @escaping (_ player:Player) -> Void) {
-        Alamofire.request("http://localhost:8000/api/players/", method: .post, parameters: player.toJSON(), encoding: URLEncoding.httpBody).responseObject { (response:DataResponse<Player>) in
+        Alamofire.request("http://localhost:8000/api/players/", method: .post, parameters: player.toJsonV2().dictionaryObject, encoding: JSONEncoding.default).responseObject { (response:DataResponse<Player>) in
             let player = response.result.value
-            print(player)
+            if let player = player {
+                completionHandler(player)
+            }
+        }
+    }
+    
+    class func putPlayer(player:Player, id:Int, completionHandler: @escaping (_ player:Player) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/players/\(id)/", method: .put, parameters: player.toJSONUpdate().dictionaryObject, encoding: JSONEncoding.default).responseObject { (response:DataResponse<Player>) in
+            let player = response.result.value
             if let player = player {
                 completionHandler(player)
             }
@@ -158,6 +180,15 @@ public class Alamoquest{
         }
     }
     
+    class func getCompoDefault(completionHandler: @escaping (_ postes: [Composition]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/getcompodefault/").responseArray { (response: DataResponse<[Composition]>) in
+            let compo = response.result.value
+            if let compo = compo {
+                completionHandler(compo)
+            }
+        }
+    }
+    
     class func getComposDetailsByCompo(idcompo:Int, completionHandler: @escaping (_ postes: [CompositionDetails]) -> Void) {
         Alamofire.request("http://127.0.0.1:8000/api/getcomposdetails/\(idcompo)").responseArray { (response: DataResponse<[CompositionDetails]>) in
             let compoDetails = response.result.value
@@ -168,7 +199,7 @@ public class Alamoquest{
     }
     
     class func postCompositionDetails(compo:CompositionDetails, completionHandler: @escaping (_ Composition:CompositionDetails) -> Void) {
-        Alamofire.request("http://localhost:8000/api/compositionsdetails/", method: .post, parameters: compo.toJsonCreate(), encoding: URLEncoding.httpBody).responseObject { (response:DataResponse<CompositionDetails>) in
+        Alamofire.request("http://localhost:8000/api/compositionsdetails/", method: .post, parameters: compo.toJsonCreate().dictionaryObject, encoding: URLEncoding.httpBody).responseObject { (response:DataResponse<CompositionDetails>) in
             let compo = response.result.value
             if let compo = compo {
                 completionHandler(compo)
@@ -176,10 +207,63 @@ public class Alamoquest{
         }
     }
     
+//    class func postCompositionDetailsArray(compo: [CompositionDetails], completionHandler: @escaping (_ Composition:CompositionDetails) -> Void) {
+//        Alamofire.request("http://localhost:8000/api/compositionsdetails/", method: .post, parameters: compo.toJSON(), encoding: JSONEncoding.default,headers: [:]).responseObject { (response:DataResponse<CompositionDetails>) in
+//            let compo = response.result.value
+//            if let compo = compo {
+//                completionHandler(compo)
+//            }
+//        }
+//    }
+    
     class func deleteCompo(compo:Composition, completionHandler: @escaping (_ Result:Bool) -> Void) {
         Alamofire.request("http://localhost:8000/api/compositions/\(compo.id!)/", method: .delete, parameters: compo.toJSON(), encoding: URLEncoding.httpBody).response(completionHandler: { (response) in
             completionHandler(true)
         })
+    }
+    
+    
+    class func getStatsMatchByMatch(idMatch:Int, completionHandler: @escaping (_ statsMatch: [StatsMatch]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/statsmatchbymatch/\(idMatch)").responseArray { (response: DataResponse<[StatsMatch]>) in
+            let statM = response.result.value
+            if let statM = statM {
+                completionHandler(statM)
+            }
+        }
+    }
+    
+    class func getStatsMatchInfoByMatch(idMatch:Int, idTeam:Int, completionHandler: @escaping (_ statsMatch: [StatsMatchInfo]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/statsmatchinfobymatch/\(idMatch)/\(idTeam)").responseArray { (response: DataResponse<[StatsMatchInfo]>) in
+            let statMI = response.result.value
+            if let statMI = statMI {
+                completionHandler(statMI)
+            }
+        }
+    }
+    
+    
+    class func getCategorie(completionHandler: @escaping (_ categorie: [Categorie]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/categoriestats/").responseArray { (response: DataResponse<[Categorie]>) in
+            let categorie = response.result.value
+            if let categorie = categorie {
+                completionHandler(categorie)
+            }
+        }
+    }
+    
+    class func getStatsInfo(completionHandler: @escaping (_ statsInfo: [StatsInfo]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/statsinfo/").responseArray { (response: DataResponse<[StatsInfo]>) in
+            let statsInfo = response.result.value
+            if let statsInfo = statsInfo {
+                completionHandler(statsInfo)
+            }
+        }
+    }
+    
+    class func deleteCompoDetail(idCompositionDetail: Int, completionHandler: @escaping (_ retour:Bool) -> Void){
+        Alamofire.request("http://localhost:8000/api/compositionsdetails/\(idCompositionDetail)/", method: .delete, encoding: URLEncoding.httpBody).response { (response) in
+            completionHandler(true)
+        }
     }
     
     

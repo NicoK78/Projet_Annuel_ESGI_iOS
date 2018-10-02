@@ -155,6 +155,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8q-gN-EUd">
+                                <rect key="frame" x="131" y="131" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dX-uk-dJY">
+                                <rect key="frame" x="137" y="237" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -188,6 +200,8 @@
                 <outlet property="ddLabel" destination="ej0-iK-dkh" id="29p-15-2nG"/>
                 <outlet property="dgLabel" destination="7gw-gh-lgh" id="5oZ-sl-oMg"/>
                 <outlet property="gCentreBtn" destination="ijT-Oy-qis" id="Il1-l5-zcS"/>
+                <outlet property="gardienBtn" destination="7dX-uk-dJY" id="ioF-Gj-2Iu"/>
+                <outlet property="gardienLabel" destination="T8q-gN-EUd" id="NGo-LP-DQV"/>
                 <outlet property="mDroiteBtn" destination="31l-gl-laq" id="eXq-6H-bTT"/>
                 <outlet property="mGaucheBtn" destination="McX-Ps-8oc" id="ntN-dC-Kkx"/>
                 <outlet property="mcDroiteBtn" destination="hMg-Tr-csR" id="VGL-Zg-p5Z"/>

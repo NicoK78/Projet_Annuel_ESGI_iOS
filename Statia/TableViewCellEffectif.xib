@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,40 +20,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer-player.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-z5-OwQ">
-                        <rect key="frame" x="16" y="25.5" width="100" height="100"/>
+                        <rect key="frame" x="16" y="50" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="BRE-aM-62r"/>
-                            <constraint firstAttribute="height" constant="100" id="nqI-0u-7fi"/>
+                            <constraint firstAttribute="width" constant="50" id="BRE-aM-62r"/>
+                            <constraint firstAttribute="height" constant="50" id="nqI-0u-7fi"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-5I-SeK">
-                        <rect key="frame" x="121" y="16" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS3-Ox-QKZ">
-                        <rect key="frame" x="121" y="113" width="42" height="21"/>
+                        <rect key="frame" x="127" y="11" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-Sv-bIi">
-                        <rect key="frame" x="121" y="64" width="42" height="21"/>
+                        <rect key="frame" x="80" y="42" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS3-Ox-QKZ">
+                        <rect key="frame" x="80" y="11" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yQi-5I-SeK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="DaA-Ra-Fnr"/>
-                    <constraint firstItem="yQi-5I-SeK" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="FNz-sN-gNK"/>
-                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MjD-9X-cNQ"/>
+                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="top" secondItem="pS3-Ox-QKZ" secondAttribute="bottom" constant="10" id="M81-5q-var"/>
+                    <constraint firstItem="yQi-5I-SeK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="OkN-l2-yai"/>
                     <constraint firstItem="vbv-z5-OwQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-4" id="Owg-0k-a8K"/>
                     <constraint firstItem="vbv-z5-OwQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cv7-rE-ecY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="pS3-Ox-QKZ" secondAttribute="bottom" constant="5" id="dZG-73-nSF"/>
-                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uSD-kA-Aci"/>
-                    <constraint firstItem="pS3-Ox-QKZ" firstAttribute="leading" secondItem="vbv-z5-OwQ" secondAttribute="trailing" constant="5" id="uXS-JW-Mws"/>
+                    <constraint firstItem="yQi-5I-SeK" firstAttribute="leading" secondItem="pS3-Ox-QKZ" secondAttribute="trailing" constant="5" id="frM-qO-QMQ"/>
+                    <constraint firstItem="pS3-Ox-QKZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="60" id="oS0-Ir-s49"/>
+                    <constraint firstItem="YgS-Sv-bIi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="60" id="oiC-7q-Ddu"/>
+                    <constraint firstItem="pS3-Ox-QKZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zAu-Fl-dGI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -68,6 +67,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="soccer-player.png" width="32" height="32"/>
+        <image name="soccer-player.png" width="15" height="15"/>
     </resources>
 </document>

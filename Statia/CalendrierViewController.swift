@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class CalendrierViewController: UIViewController,UITableViewDelegate , UITableViewDataSource {
 
@@ -22,6 +23,9 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
         self.tableView.register(UINib(nibName:"MatchTableViewCell",bundle:nil), forCellReuseIdentifier: "matchCell")
 
         // Do any additional setup after loading the view.
+        let cells = self.tableView.visibleCells
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: cells, animations: [zoomAnimation])
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +34,7 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tableView.isHidden = true
         self.matchArray.removeAll()
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCalendrier))
         let idTeam = UserDefaults.standard.integer(forKey: "team")
@@ -37,9 +42,23 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
             for match in matchs {
                 print(match)
                 self.matchArray.append(match)
-                self.tableView.reloadData()
+
             }
+            
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+            let cells = self.tableView.visibleCells
+            let zoomAnimation = AnimationType.zoom(scale: 0.5)
+            let fromAnimation = AnimationType.from(direction: .right, offset: 100.0)
+            UIView.animate(views: cells, animations: [fromAnimation], duration: 0.3)
         }
+        
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +99,7 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
             formater.timeStyle = DateFormatter.Style.short
             cell.labelDate.text = formater.string(from: dateMatch!)
         }
-
+        
         return cell
     }
     
@@ -93,6 +112,24 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
         let calendrierCreate = CalendrierCreateViewController(nibName: "CalendrierCreateViewController", bundle: nil)
         calendrierCreate.mode = 0
         self.navigationController?.pushViewController(calendrierCreate, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(self.matchArray[indexPath.row].id)")
+        Alamoquest.getStatsMatchByMatch(idMatch: self.matchArray[indexPath.row].id) { (statsArray) in
+            print(statsArray.count)
+            if(statsArray.count == 2){
+                let statView = StatsMatchViewController()
+                statView.match = self.matchArray[indexPath.row]
+                self.navigationController?.pushViewController(statView, animated: true)
+            }else{
+                let alert = UIAlertController(title: "Statistiques", message: "Les statistiques ne sont pas encore disponible.", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

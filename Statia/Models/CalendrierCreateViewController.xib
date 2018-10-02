@@ -18,8 +18,10 @@
                 <outlet property="dateTxt" destination="XuU-pu-YHH" id="ehu-Dx-bKW"/>
                 <outlet property="labelDomicile" destination="gQn-EE-HDz" id="ZBi-zi-Y2q"/>
                 <outlet property="labelExterieur" destination="Qr6-BE-8DX" id="okK-Yw-VOv"/>
+                <outlet property="lblDay" destination="sJi-eN-FsO" id="5Fx-hf-dca"/>
                 <outlet property="pickerView" destination="4g9-Ya-Xge" id="JDB-Ud-fdW"/>
                 <outlet property="switchLieu" destination="3gb-oD-ftc" id="tRq-Bk-fqG"/>
+                <outlet property="txtFDay" destination="CRz-gg-CJS" id="6GC-U4-MQh"/>
                 <outlet property="versusTeamTxt" destination="lJz-sH-1hP" id="yUo-O3-k7r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adversaire" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJz-sH-1hP">
-                    <rect key="frame" x="0.0" y="170" width="375" height="30"/>
+                    <rect key="frame" x="0.0" y="70" width="375" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -40,7 +42,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-pu-YHH">
-                    <rect key="frame" x="0.0" y="240" width="375" height="30"/>
+                    <rect key="frame" x="0.0" y="140" width="375" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -50,34 +52,34 @@
                     </connections>
                 </textField>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gb-oD-ftc">
-                    <rect key="frame" x="163" y="315" width="51" height="31"/>
+                    <rect key="frame" x="163" y="215" width="51" height="31"/>
                 </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domicile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-EE-HDz">
-                    <rect key="frame" x="50" y="320" width="66" height="21"/>
+                    <rect key="frame" x="50" y="220" width="66" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exterieur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr6-BE-8DX">
-                    <rect key="frame" x="256.5" y="320" width="68.5" height="21"/>
+                    <rect key="frame" x="256.5" y="220" width="68.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S02-44-WVG">
-                    <rect key="frame" x="60" y="401" width="45" height="30"/>
+                    <rect key="frame" x="60" y="301" width="45" height="30"/>
                     <state key="normal" title="Coupe">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbD-Ao-jgy">
-                    <rect key="frame" x="141" y="401" width="92" height="30"/>
+                    <rect key="frame" x="141" y="301" width="92" height="30"/>
                     <state key="normal" title="Championnat">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcJ-Je-cGe">
-                    <rect key="frame" x="264" y="401" width="46" height="30"/>
+                    <rect key="frame" x="264" y="301" width="46" height="30"/>
                     <state key="normal" title="Amical">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
@@ -95,6 +97,18 @@
                         <action selector="endEditTeam:" destination="-1" eventType="touchDragExit" id="rCo-aw-ipj"/>
                     </connections>
                 </datePicker>
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRz-gg-CJS">
+                    <rect key="frame" x="175" y="341" width="25" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jounée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJi-eN-FsO">
+                    <rect key="frame" x="108.5" y="345" width="56.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -104,10 +118,12 @@
                 <constraint firstItem="YbD-Ao-jgy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Fv-zY-G1w"/>
                 <constraint firstItem="3gb-oD-ftc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="83X-Qt-vtY"/>
                 <constraint firstItem="YbD-Ao-jgy" firstAttribute="top" secondItem="3gb-oD-ftc" secondAttribute="bottom" constant="55" id="8ce-D2-1Vj"/>
-                <constraint firstItem="lJz-sH-1hP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="Avm-nc-fWz"/>
+                <constraint firstItem="CRz-gg-CJS" firstAttribute="top" secondItem="YbD-Ao-jgy" secondAttribute="bottom" constant="10" id="9Cf-LI-K3X"/>
+                <constraint firstItem="lJz-sH-1hP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Avm-nc-fWz"/>
                 <constraint firstItem="Qr6-BE-8DX" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Bpk-7R-ByB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qr6-BE-8DX" secondAttribute="trailing" constant="50" id="Dwu-sl-wSA"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="EQg-eH-ZDQ"/>
+                <constraint firstItem="CRz-gg-CJS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ekl-YD-JQ5"/>
                 <constraint firstItem="9ec-Tf-wav" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HLm-T4-pgU"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="top" secondItem="lJz-sH-1hP" secondAttribute="bottom" constant="40" id="M6Z-Z6-MGL"/>
                 <constraint firstItem="4g9-Ya-Xge" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Rgl-Ao-6az"/>
@@ -122,8 +138,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mcJ-Je-cGe" secondAttribute="trailing" constant="65" id="gGE-gG-LVx"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mTw-hc-pGk"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="top" secondItem="gQn-EE-HDz" secondAttribute="bottom" constant="60" id="oup-4i-eVS"/>
+                <constraint firstItem="sJi-eN-FsO" firstAttribute="top" secondItem="YbD-Ao-jgy" secondAttribute="bottom" constant="14" id="un1-gW-Ztz"/>
+                <constraint firstItem="CRz-gg-CJS" firstAttribute="leading" secondItem="sJi-eN-FsO" secondAttribute="trailing" constant="10" id="zTu-cX-pOq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="82.5"/>
         </view>
     </objects>
 </document>

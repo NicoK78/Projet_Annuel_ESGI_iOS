@@ -25,22 +25,22 @@ class AppHomeViewController: UITabBarController   {
     override func viewWillAppear(_ animated: Bool) {
         let team = TeamTableViewController()
         team.title = "First"
-        team.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
+        team.tabBarItem = UITabBarItem(title: "Équipe", image: UIImage(named: "football.png"), tag: 0)
         
         
         let effectif = EffectifViewController()
         effectif.title = "Effectif"
-        effectif.tabBarItem = UITabBarItem(title: "Effectif", image: nil, tag: 1)
+        effectif.tabBarItem = UITabBarItem(title: "Effectif", image: UIImage(named: "player.png"), tag: 1)
         
         let calendrier = CalendrierViewController()
         calendrier.title = "Calendrier"
         calendrier.tabBarItem = UITabBarItem(title: "Calendrier", image: UIImage(named: "calendrier.png"), tag: 2)
         
         let composition = CompoViewController()
-        composition.tabBarItem = UITabBarItem(title: "Composition", image: nil, tag: 3)
+        composition.tabBarItem = UITabBarItem(title: "Composition", image: UIImage(named: "strategy.png"), tag: 3)
         
         let resultat = ResultatViewController()
-        resultat.tabBarItem = UITabBarItem(title: "Resultat", image: nil, tag: 4)
+        resultat.tabBarItem = UITabBarItem(title: "Resultat", image: UIImage(named: "sportive-competition-results.png"), tag: 4)
 
         
         let controllers = [team,effectif,calendrier,composition,resultat]

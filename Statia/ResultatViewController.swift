@@ -27,6 +27,10 @@ class ResultatViewController: UIViewController, UITableViewDelegate , UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
