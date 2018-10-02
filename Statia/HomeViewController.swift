@@ -54,8 +54,8 @@ class HomeViewController: UIViewController {
             let password = passwordTxt.text
             
             let parameter: Parameters = [
-                "username":"viadenouselom@gmail.com",
-                "password":"Jogabonito29&"
+                "username":"nicolas.kervoern@gmail.com",
+                "password":"soleil78"
             ]
             
             Alamoquest.login(parameter: parameter, completionHandler: { (json) in

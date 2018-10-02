@@ -35,7 +35,7 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
         let idTeam = UserDefaults.standard.integer(forKey: "team")
         Alamoquest.getMatchByTeam(idteam: idTeam) { (matchs) in
             for match in matchs {
-                print(match)
+                print(match.toJSON())
                 self.matchArray.append(match)
                 self.tableView.reloadData()
             }

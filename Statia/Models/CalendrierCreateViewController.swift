@@ -366,6 +366,7 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     @objc func doneCreateTeam(){
+        print("######## 1 ##########")
         if(dateTxt.text == "" && self.versusTeamTxt.text == ""){
             return
         }
@@ -394,9 +395,14 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         let dateString = formater.string(from: dateMatch!)
         
         print(dateString)
+        print("######### 2 #########")
         match.date = dateString
+        print(match.date!)
+        print(match.home.name)
+        print("######### 3 #########")
         var tt = match.toJsonCreate()
         print(tt)
+        print("######### 4 #########")
         Alamoquest.postMatch(match: match) { (match) in
             print("SUCESS : \(match)")
             self.navigationController?.popViewController(animated: true)
