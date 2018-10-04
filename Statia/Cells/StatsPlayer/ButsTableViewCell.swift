@@ -10,6 +10,11 @@ import UIKit
 
 class ButsTableViewCell: UITableViewCell {
 
+    @IBOutlet var nbGoalPlayer: UILabel!
+    @IBOutlet var nbGoalTeam: UILabel!
+    @IBOutlet var pvGoals: UIProgressView!
+    @IBOutlet var nbGoalPerMatch: UILabel!
+    @IBOutlet var goalForMin: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,9 @@ class ButsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setPVGoals(player: Int, team: Int) {
+        nbGoalPlayer.text = "Joueur (\(player))"
+        nbGoalTeam.text = "Equipe (\(team))"
+        pvGoals.progress = team == 0 ? 0 : Float(Float(player)/Float(team))
+    }
 }

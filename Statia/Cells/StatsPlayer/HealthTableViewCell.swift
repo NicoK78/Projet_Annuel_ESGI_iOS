@@ -10,6 +10,11 @@ import UIKit
 
 class HealthTableViewCell: UITableViewCell {
 
+    @IBOutlet var disponibility: UILabel!
+    @IBOutlet var natureInjury: UILabel!
+    @IBOutlet var timeIndisponibility: UILabel!
+    @IBOutlet var backDate: UILabel!
+    @IBOutlet var recoveryDay: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

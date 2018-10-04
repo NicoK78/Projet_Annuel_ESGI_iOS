@@ -140,7 +140,41 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var playerTabTemp = [Player]()
+        switch indexPath.section {
+        case 0:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Gardien")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 1:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Défenseur")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 2:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Milieu")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        case 3:
+            for player in self.playersTab {
+                if(player.poste.starts(with: "Attaquant")){
+                    playerTabTemp.append(player)
+                }
+            }
+            
+        default:
+            break
+        }
         let tableViewPlayersController = TableViewStatsPlayerController(nibName: "TableViewStatsPlayerController", bundle: nil)
+        tableViewPlayersController.player = playerTabTemp[indexPath.row]
         self.navigationController?.pushViewController(tableViewPlayersController, animated: true)
     }
     

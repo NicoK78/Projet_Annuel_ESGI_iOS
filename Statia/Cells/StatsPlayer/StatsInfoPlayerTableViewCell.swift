@@ -10,6 +10,14 @@ import UIKit
 
 class StatsInfoPlayerTableViewCell: UITableViewCell {
 
+    @IBOutlet var picture: UIImageView!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var email: UILabel!
+    @IBOutlet var city: UILabel!
+    @IBOutlet var post: UILabel!
+    @IBOutlet var foot: UILabel!
+    @IBOutlet var phone: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

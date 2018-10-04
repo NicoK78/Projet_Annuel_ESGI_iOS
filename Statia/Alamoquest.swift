@@ -266,8 +266,15 @@ public class Alamoquest{
         }
     }
     
-    
+    class func getStatsInfoByPlayer(idPlayer: Int, completionHandler: @escaping (_ statsPlayer: StatsPlayer) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/statsinfobyplayer/\(idPlayer)").responseObject { (response: DataResponse<StatsPlayer>) in
+            print("TEEEEEEEEEEST")
+            let stats = response.result.value
+            if let stats = stats {
+                print("STATS : \(stats)")
+                completionHandler(stats)
+            }
+        }
+    }
 }
-
-
 

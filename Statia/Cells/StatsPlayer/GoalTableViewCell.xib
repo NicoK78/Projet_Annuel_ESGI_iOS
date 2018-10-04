@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,6 +138,21 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="goalForMin" destination="wvI-qk-7xg" id="PMs-SB-mNK"/>
+                <outlet property="goalForShot" destination="wRH-ct-j6e" id="4dJ-ek-5oo"/>
+                <outlet property="longestSerie" destination="Ltv-A5-3Rb" id="SPO-qZ-vvY"/>
+                <outlet property="nbAirGroundIntercept" destination="Sq3-VQ-fPK" id="ocW-3x-3FR"/>
+                <outlet property="nbCapturedBall" destination="rDa-I1-g9v" id="SuR-JR-yyz"/>
+                <outlet property="nbCleanSheet" destination="5ZR-RG-jAT" id="jE3-I0-s6Y"/>
+                <outlet property="nbGoalForShot" destination="J7r-5s-D0m" id="FKc-ds-gZG"/>
+                <outlet property="nbIntercept" destination="263-TV-aqS" id="4zG-fu-Oej"/>
+                <outlet property="nbPushedBall" destination="5r1-26-tWF" id="zuB-PZ-abJ"/>
+                <outlet property="nbSave" destination="14P-vk-pcB" id="EeD-b8-NdM"/>
+                <outlet property="nbShot" destination="E4l-Yj-0Pa" id="eT0-yP-nKp"/>
+                <outlet property="pbCapturedPushedBall" destination="7Br-C8-7M8" id="rEz-rA-HDD"/>
+                <outlet property="pvSaveShot" destination="JWH-Bz-YPN" id="hxi-Dg-dSw"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

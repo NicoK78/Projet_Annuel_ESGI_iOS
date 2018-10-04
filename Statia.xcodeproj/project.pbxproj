@@ -45,6 +45,7 @@
 		038AB17A209A64D2007C79AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AB178209A64D1007C79AE /* HomeViewController.xib */; };
 		03BE8F7920C806770007A19E /* StatsBarPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */; };
 		03BE8F7A20C806770007A19E /* StatsBarPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */; };
+		03BEDF4721668E0D001870BE /* StatsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BEDF4621668E0C001870BE /* StatsPlayer.swift */; };
 		79037A1D20F6589F007B83E6 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79037A1C20F6589E007B83E6 /* Coach.swift */; };
 		79165A6121528FA000657907 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79165A6021528FA000657907 /* Users.swift */; };
 		7928F45720EB82F5005EA8CB /* Alamoquest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928F45620EB82F5005EA8CB /* Alamoquest.swift */; };
@@ -171,6 +172,7 @@
 		038AB178209A64D1007C79AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		03BE8F7720C806770007A19E /* StatsBarPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		03BE8F7820C806770007A19E /* StatsBarPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsBarPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		03BEDF4621668E0C001870BE /* StatsPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPlayer.swift; sourceTree = "<group>"; };
 		0B0CAF6577EBFACB2B039968 /* Pods-Statia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Statia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Statia/Pods-Statia.release.xcconfig"; sourceTree = "<group>"; };
 		209FB7474792D0488017A0C3 /* Pods-Statia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Statia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Statia/Pods-Statia.debug.xcconfig"; sourceTree = "<group>"; };
 		79037A1C20F6589E007B83E6 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				7998195420FE946400FE1247 /* Categorie.swift */,
 				79EF981620FEA59A00D0294E /* StatsInfo.swift */,
 				79165A6021528FA000657907 /* Users.swift */,
+				03BEDF4621668E0C001870BE /* StatsPlayer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				7998195520FE946400FE1247 /* Categorie.swift in Sources */,
 				7998194920FA22A300FE1247 /* Composition.swift in Sources */,
 				79AA61F120C2059100665B3C /* Player.swift in Sources */,
+				03BEDF4721668E0D001870BE /* StatsPlayer.swift in Sources */,
 				7928F45720EB82F5005EA8CB /* Alamoquest.swift in Sources */,
 				7989494220F9009D00FFEC88 /* TeamResultatTableViewCell.swift in Sources */,
 				795C6D54211F05F7004E52E5 /* PlayerCreateV2ViewController.swift in Sources */,

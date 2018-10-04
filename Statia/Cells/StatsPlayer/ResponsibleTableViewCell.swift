@@ -10,6 +10,9 @@ import UIKit
 
 class ResponsibleTableViewCell: UITableViewCell {
 
+    @IBOutlet var name: UILabel!
+    @IBOutlet var phone: UILabel!
+    @IBOutlet var email: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

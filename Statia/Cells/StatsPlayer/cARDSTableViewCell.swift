@@ -10,6 +10,15 @@ import UIKit
 
 class CardsTableViewCell: UITableViewCell {
 
+    @IBOutlet var nbYellowCard: UILabel!
+    @IBOutlet var nbTeamYellowCard: UILabel!
+    @IBOutlet var nbAverageYellowCard: UILabel!
+    @IBOutlet var nbPerMinYellowCard: UILabel!
+    @IBOutlet var nbRedCard: UILabel!
+    @IBOutlet var nbTeamRedCard: UILabel!
+    @IBOutlet var nbAverageRedCard: UILabel!
+    @IBOutlet var nbPerMinRedCard: UILabel!
+    @IBOutlet var nbExpulsion: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

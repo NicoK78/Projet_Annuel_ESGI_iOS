@@ -10,6 +10,9 @@ import UIKit
 
 class PlayTimeTableViewCell: UITableViewCell {
 
+    @IBOutlet var nbMatchs: UILabel!
+    @IBOutlet var nbMin: UILabel!
+    @IBOutlet var average: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

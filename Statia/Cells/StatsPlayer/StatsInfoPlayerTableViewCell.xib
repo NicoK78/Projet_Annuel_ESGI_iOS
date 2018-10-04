@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-O4-1ye">
-                        <rect key="frame" x="16" y="11" width="60" height="60"/>
+                        <rect key="frame" x="16" y="11" width="60" height="61"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="RUh-Zg-Dcl"/>
                         </constraints>
@@ -95,6 +94,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="city" destination="tsT-vD-ax8" id="7l5-6K-Bwo"/>
+                <outlet property="date" destination="8ld-bb-sDh" id="JcL-OR-ezW"/>
+                <outlet property="email" destination="jng-bf-hhn" id="IWs-EY-4oE"/>
+                <outlet property="foot" destination="ZmY-TK-UTo" id="z5N-mk-pfM"/>
+                <outlet property="name" destination="Qia-Rq-A3K" id="r52-PI-glE"/>
+                <outlet property="phone" destination="igJ-Pk-kqh" id="CoU-Ck-f4L"/>
+                <outlet property="picture" destination="ATT-O4-1ye" id="BqN-Qb-5Dh"/>
+                <outlet property="post" destination="0Ru-7m-vIX" id="Ahz-do-hAw"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
