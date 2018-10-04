@@ -266,7 +266,7 @@ class TableViewStatsPlayerController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.item {
         case 0:
-            return 120
+            return 100
 //        case 1:
 //            return 110
 //            return 0
