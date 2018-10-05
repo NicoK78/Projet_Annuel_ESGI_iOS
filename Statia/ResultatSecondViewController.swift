@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ViewAnimator
+
 
 class ResultatSecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -23,7 +25,9 @@ class ResultatSecondViewController: UIViewController, UITableViewDataSource, UIT
         self.tableView.dataSource = self
         self.tableViewTeam.delegate = self
         self.tableViewTeam.dataSource = self
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
+        self.tableView.backgroundColor = .clear
+        self.tableViewTeam.backgroundColor = .clear
         self.tableView.register(UINib(nibName:"MatchTableViewCell",bundle:nil), forCellReuseIdentifier: "matchCell")
         self.tableViewTeam.register(UINib(nibName: "TeamResultatTableViewCell", bundle: nil), forCellReuseIdentifier: "teamResultCell")
         // Do any additional setup after loading the view.
@@ -42,6 +46,31 @@ class ResultatSecondViewController: UIViewController, UITableViewDataSource, UIT
             return self.teamArray.count
         }
        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView == self.tableView){
+            let zoom = AnimationType.zoom(scale: 0.5)
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.animate(animations: [zoom], completion: {
+                Alamoquest.getStatsMatchByMatch(idMatch: self.matchArray[indexPath.row].id) { (statsArray) in
+                    print(statsArray.count)
+                    if(statsArray.count == 2){
+                        let statView = StatsMatchViewController()
+                        statView.match = self.matchArray[indexPath.row]
+                        self.navigationController?.pushViewController(statView, animated: true)
+                    }else{
+                        let alert = UIAlertController(title: "Statistiques", message: "Les statistiques ne sont pas encore disponible.", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        
+                        self.present(alert, animated: true)
+                    }
+                }
+
+            })
+           
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +103,8 @@ class ResultatSecondViewController: UIViewController, UITableViewDataSource, UIT
                 cell.labelDate.text = formater.string(from: dateMatch!)
             }
             
-            
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "teamResultCell" ,for: indexPath) as! TeamResultatTableViewCell
@@ -82,6 +112,12 @@ class ResultatSecondViewController: UIViewController, UITableViewDataSource, UIT
             cell.labelTeam.text = "\(self.teamArray[indexPath.row].club.name!) \(self.teamArray[indexPath.row].name!)"
             cell.btnAdd.addTarget(self, action: #selector(addMatch(sender:)), for: .touchDown)
             cell.btnAdd.tag = self.teamArray[indexPath.row].id!
+            if(UserDefaults.standard.integer(forKey: "profil") > 1){
+                cell.btnAdd.isEnabled = false
+                cell.btnAdd.isHidden = true
+            }
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         }
         
@@ -114,52 +150,52 @@ class ResultatSecondViewController: UIViewController, UITableViewDataSource, UIT
         return 50
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        if (tableView == self.tableView){
-            let action = UITableViewRowAction(style: .normal, title: "Score") { (action, indexPath) in
-                let alert = UIAlertController(title: "Score", message: "\(self.matchArray[indexPath.row].home.club.name!) vs \(self.matchArray[indexPath.row].away.club.name!)", preferredStyle: .alert)
-                
-
-                
-                alert.addTextField(configurationHandler: { (textField) in
-                    textField.placeholder = "Score : \(self.matchArray[indexPath.row].home.club.name!) \(self.matchArray[indexPath.row].home.name!)"
-                })
-                
-                alert.addTextField(configurationHandler: { (textField) in
-                    textField.placeholder = "Score : \(self.matchArray[indexPath.row].away.club.name!) \(self.matchArray[indexPath.row].away.name!)"
-                })
-                
-                alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {action in
-                    let firstTxt = alert.textFields![0] as UITextField
-                    let second = alert.textFields![1] as UITextField
-                    let matchUpdate = self.matchArray[indexPath.row]
-                    matchUpdate.homeGoal = Int(firstTxt.text!)
-                    matchUpdate.awayGoal = Int(second.text!)
-                    
-                    Alamoquest.updateMatch(match: matchUpdate, completionHandler: { (match) in
-                        print("Sucess \(match)")
-                        let idLeague = UserDefaults.standard.integer(forKey: "idleague")
-                        Alamoquest.getTeamByLeague(idLeague: idLeague) { (teams) in
-                            for team in teams {
-                                self.teamArray.append(team)
-                                self.tableViewTeam.reloadData()
-                            }
-                        }
-                    })
-                }))
-                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-                
-                self.present(alert, animated: true)
-            }
-            
-            
-            return [action]
-        }else{
-            return nil
-        }
-        
-
-    }
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        if (tableView == self.tableView){
+//            let action = UITableViewRowAction(style: .normal, title: "Score") { (action, indexPath) in
+//                let alert = UIAlertController(title: "Score", message: "\(self.matchArray[indexPath.row].home.club.name!) vs \(self.matchArray[indexPath.row].away.club.name!)", preferredStyle: .alert)
+//
+//
+//
+//                alert.addTextField(configurationHandler: { (textField) in
+//                    textField.placeholder = "Score : \(self.matchArray[indexPath.row].home.club.name!) \(self.matchArray[indexPath.row].home.name!)"
+//                })
+//
+//                alert.addTextField(configurationHandler: { (textField) in
+//                    textField.placeholder = "Score : \(self.matchArray[indexPath.row].away.club.name!) \(self.matchArray[indexPath.row].away.name!)"
+//                })
+//
+//                alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {action in
+//                    let firstTxt = alert.textFields![0] as UITextField
+//                    let second = alert.textFields![1] as UITextField
+//                    let matchUpdate = self.matchArray[indexPath.row]
+//                    matchUpdate.homeGoal = Int(firstTxt.text!)
+//                    matchUpdate.awayGoal = Int(second.text!)
+//
+//                    Alamoquest.updateMatch(match: matchUpdate, completionHandler: { (match) in
+//                        print("Sucess \(match)")
+//                        let idLeague = UserDefaults.standard.integer(forKey: "idleague")
+//                        Alamoquest.getTeamByLeague(idLeague: idLeague) { (teams) in
+//                            for team in teams {
+//                                self.teamArray.append(team)
+//                                self.tableViewTeam.reloadData()
+//                            }
+//                        }
+//                    })
+//                }))
+//                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+//
+//                self.present(alert, animated: true)
+//            }
+//
+//
+//            return [action]
+//        }else{
+//            return nil
+//        }
+//
+//
+//    }
     
     
     @objc func addMatch(sender: UIButton){

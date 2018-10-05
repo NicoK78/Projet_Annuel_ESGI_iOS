@@ -54,6 +54,11 @@ class HomeViewController: UIViewController {
             let password = passwordTxt.text
             
             let parameter: Parameters = [
+                "username":"Nicolasss@gmail.com",
+                "password":"nicolaskoervoen"
+            ]
+            
+            let parameter2: Parameters = [
                 "username":"viadenouselom@gmail.com",
                 "password":"Jogabonito29&"
             ]
@@ -63,7 +68,7 @@ class HomeViewController: UIViewController {
 //                "password":password ?? ""
 //            ]
             
-            Alamoquest.login(parameter: parameter, completionHandler: { (json) in
+            Alamoquest.login(parameter: parameter2, completionHandler: { (json) in
                 print("JSON : \(json)")
                 if (json == false){
                     let alert = UIAlertController(title: "Attention", message: "Identifiant ou mot de passe incorect", preferredStyle: .alert)

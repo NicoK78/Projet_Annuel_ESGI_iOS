@@ -17,11 +17,12 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.register(UINib(nibName:"MatchTableViewCell",bundle:nil), forCellReuseIdentifier: "matchCell")
-
+        self.tableView.backgroundColor = .clear
         // Do any additional setup after loading the view.
         let cells = self.tableView.visibleCells
         let zoomAnimation = AnimationType.zoom(scale: 0.2)
@@ -36,7 +37,10 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.isHidden = true
         self.matchArray.removeAll()
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCalendrier))
+        if(UserDefaults.standard.integer(forKey: "profil") == 1){
+            self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCalendrier))
+        }
+
         let idTeam = UserDefaults.standard.integer(forKey: "team")
         Alamoquest.getMatchByTeam(idteam: idTeam) { (matchs) in
             for match in matchs {
@@ -63,6 +67,13 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.matchArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if(UserDefaults.standard.integer(forKey: "profil") > 1){
+            return false
+        }
+        return true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,7 +110,8 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
             formater.timeStyle = DateFormatter.Style.short
             cell.labelDate.text = formater.string(from: dateMatch!)
         }
-        
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -115,29 +127,40 @@ class CalendrierViewController: UIViewController,UITableViewDelegate , UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(self.matchArray[indexPath.row].id)")
-        Alamoquest.getStatsMatchByMatch(idMatch: self.matchArray[indexPath.row].id) { (statsArray) in
-            print(statsArray.count)
-            if(statsArray.count == 2){
-                let statView = StatsMatchViewController()
-                statView.match = self.matchArray[indexPath.row]
-                self.navigationController?.pushViewController(statView, animated: true)
-            }else{
-                let alert = UIAlertController(title: "Statistiques", message: "Les statistiques ne sont pas encore disponible.", preferredStyle: .alert)
 
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                
-                self.present(alert, animated: true)
+        var cell = tableView.cellForRow(at: indexPath)
+        let zoom = AnimationType.zoom(scale: 0.5)
+        cell?.animate(animations: [zoom], completion: {
+            Alamoquest.getStatsMatchByMatch(idMatch: self.matchArray[indexPath.row].id) { (statsArray) in
+                print(statsArray.count)
+                if(statsArray.count == 2){
+                    let statView = StatsMatchViewController()
+                    statView.match = self.matchArray[indexPath.row]
+                    self.navigationController?.pushViewController(statView, animated: true)
+                }else{
+                    let alert = UIAlertController(title: "Statistiques", message: "Les statistiques ne sont pas encore disponible.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true)
+                }
             }
-        }
+        })
+
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            Alamoquest.deleteMatch(match: self.matchArray[indexPath.row], completionHandler: { (result) in
-                self.matchArray.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-            })
+            let alert = UIAlertController(title: "Suppression", message: "Êtes vous sûr ?", preferredStyle: UIAlertControllerStyle.alert)
+
+            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { (UIAlertAction) in
+                Alamoquest.deleteMatch(match: self.matchArray[indexPath.row], completionHandler: { (result) in
+                    self.matchArray.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                })
+            }))
+            self.present(alert, animated: true)
             
         }
         

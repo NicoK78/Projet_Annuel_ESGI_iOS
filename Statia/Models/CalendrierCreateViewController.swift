@@ -9,7 +9,8 @@
 import UIKit
 import ViewAnimator
 
-class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource , UITableViewDelegate, UITableViewDataSource {
+
 
     @IBOutlet var switchLieu: UISwitch!
     @IBOutlet var btnChampionnat: UIButton!
@@ -17,26 +18,31 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet var btnAmical: UIButton!
     @IBOutlet var versusTeamTxt: UITextField!
     @IBOutlet weak var dateTxt: UITextField!
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet var pickerView: UIPickerView!
+    var compoArray = [Composition]()
+    var composSelected = Composition()
+//
+//    @IBOutlet weak var datePicker: UIDatePicker!
+//    @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var labelDomicile: UILabel!
     
     @IBOutlet var labelExterieur: UILabel!
     @IBOutlet var txtFDay: UITextField!
     @IBOutlet var lblDay: UILabel!
-    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var lblCompo: UILabel!
+    var pickerRef = UIPickerView()
     var teamsTable = [Team]()
     var teamVs = Team()
     var idCompet = 2
-    
+
     var matchUpdate = Match()
     var mode = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
-
-        
+        self.tableView.backgroundColor = .clear
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
         initButton()
         initLabel()
@@ -49,11 +55,42 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
 
         //self.pickerView.delegate = self
         //self.pickerView.dataSource = self
-        self.pickerView.backgroundColor = UIColor.white
-        self.pickerView.isHidden = true
-        self.datePicker.isHidden = true
-        self.datePicker.backgroundColor = UIColor.white
-        self.pickerView.showsSelectionIndicator = true
+//        var pickerView = UIPickerView()
+//        var datePicker = UIDatePicker()
+//        self.pickerView.backgroundColor = UIColor.white
+//        self.pickerView.isHidden = true
+//        self.datePicker.isHidden = true
+//        self.datePicker.backgroundColor = UIColor.white
+//        self.pickerView.showsSelectionIndicator = true
+        self.lblCompo.text = "Choix de la composition : "
+        
+        
+        let picker: UIPickerView
+        picker = UIPickerView()
+        picker.backgroundColor = UIColor.white
+        picker.delegate = self
+        picker.dataSource = self
+        self.pickerRef = picker
+        let datePicker = UIDatePicker()
+        datePicker.timeZone = TimeZone(abbreviation: "UTC")
+        datePicker.locale = Locale(identifier: "FR-fr")
+        datePicker.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
+
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        self.versusTeamTxt.inputView = picker
+        self.versusTeamTxt.inputAccessoryView = toolBar
+        
+        self.dateTxt.inputView = datePicker
+        self.dateTxt.inputAccessoryView = toolBar
         
         
         
@@ -67,7 +104,13 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         if (self.mode == 1 || self.mode == 2 ){
             initMatchUpdate(match: self.matchUpdate)
         }
-        
+        var idTeam = UserDefaults.standard.integer(forKey: "team")
+        Alamoquest.getCompoByTeam(idteam: idTeam) { (compos) in
+            for compo in compos {
+                self.compoArray.append(compo)
+            }
+            self.tableView.reloadData()
+        }
        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -86,9 +129,90 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
             for team in teams {
                 self.teamsTable.append(team)
             }
-            self.pickerView.reloadAllComponents()
+           self.pickerRef.reloadAllComponents()
+            if(self.mode == 2){
+                var idTeam = UserDefaults.standard.integer(forKey: "team")
+                if(self.matchUpdate.home.id == idTeam){
+                    for (index, team) in self.teamsTable.enumerated(){
+                        if(team.id == self.matchUpdate.away.id){
+                            self.pickerRef.selectRow(index, inComponent: 0, animated: true)
+                            break
+                        }
+                    }
+                }else{
+                    for (index, team) in self.teamsTable.enumerated(){
+                        if(team.id == self.matchUpdate.home.id){
+                            self.pickerRef.selectRow(index, inComponent: 0, animated: true)
+                            break
+                        }
+                    }
+                }
+            }
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return self.compoArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = self.compoArray[indexPath.row].name
+        
+        cell.backgroundColor = .clear
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        let zoom = AnimationType.zoom(scale: 0.5)
+        cell?.animate(animations: [zoom])
+        
+        self.lblCompo.text = "Choix de la composition : " + self.compoArray[indexPath.row].name
+        
+        
+        Alamoquest.getComposDetailsByCompo(idcompo: self.compoArray[indexPath.row].id) { (composDetailsArray) in
+            print("\(composDetailsArray.count)")
+            if(composDetailsArray.count > 0){
+                var total = 0
+                for composdetails in composDetailsArray{
+                    if(composdetails.player != nil && composdetails.poste.id != 15){
+                        total += 1
+                    }
+                }
+                if(total < 11){
+                    let alert = UIAlertController(title: "Attention", message: "Votre composition est incomplète, elle ne comporte que : \(total) joueurs", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    self.lblCompo.text = "Choix de la composition : "
+                    self.composSelected = Composition()
+                    return
+                }else{
+                     self.composSelected = self.compoArray[indexPath.row]
+                }
+            }else{
+                
+                let alert = UIAlertController(title: "Attention", message: "Votre composition est incomplète, elle ne comporte aucun joueur", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                 self.lblCompo.text = "Choix de la composition : "
+            }
+        }
+        
+       
+    }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -103,7 +227,7 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.teamVs = self.teamsTable[row]
+        //self.teamVs = self.teamsTable[row]
         self.versusTeamTxt.text = "\(self.teamsTable[row].club.name!) : \(self.teamsTable[row].name!)"
         //self.pickerView.isHidden = true
     }
@@ -171,70 +295,45 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         //self.datePicker.isHidden =  true
     }
     
-    func showDatePicker(){
-        self.datePicker.isHidden = false
-        self.pickerView.isHidden = true
-    }
     
-    func hidePicker(){
-        self.pickerView.isHidden = true
-        
-    }
-    
-    func hideDatePicker(){
-        self.datePicker.isHidden = true
-    }
-    
-    @objc func hideAll(){
-        hidePicker()
-        hideDatePicker()
-    }
-    
-    @IBAction func endEditTeam(_ sender: Any) {
-        let txt = sender as! UITextField
-        if (txt.tag == 1){
-            hidePicker()
-        }else if(txt.tag == 2){
-            hideDatePicker()
-        }
 
-    }
     @IBAction func editVersusTeam(_ sender: Any) {
-        let txt = sender as! UITextField
-        
-        let picker: UIPickerView
-        picker = UIPickerView()
-        picker.backgroundColor = UIColor.white
-        picker.delegate = self
-        picker.dataSource = self
-        
-        let datePicker = UIDatePicker()
-        datePicker.timeZone = TimeZone(abbreviation: "UTC")
-        datePicker.locale = Locale(identifier: "FR-fr")
-        datePicker.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        
-        
-        
-        if (txt.tag == 1){
-            txt.inputView = picker
-            txt.inputAccessoryView = toolBar
-            txt.resignFirstResponder()
-        }else if(txt.tag == 2){
-            txt.inputView = datePicker
-            txt.inputAccessoryView = toolBar
-            txt.resignFirstResponder()
-            //showDatePicker()
-        }
+        self.versusTeamTxt.resignFirstResponder()
+//        let txt = sender as! UITextField
+//
+//        let picker: UIPickerView
+//        picker = UIPickerView()
+//        picker.backgroundColor = UIColor.white
+//        picker.delegate = self
+//        picker.dataSource = self
+//
+//        let datePicker = UIDatePicker()
+//        datePicker.timeZone = TimeZone(abbreviation: "UTC")
+//        datePicker.locale = Locale(identifier: "FR-fr")
+//        datePicker.addTarget(self, action: #selector(pickerBirthdayChange(sender:)), for: .valueChanged)
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = .default
+//        toolBar.isTranslucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        toolBar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+//        toolBar.setItems([doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//
+//
+//
+//
+//        if (txt.tag == 1){
+//            txt.inputView = picker
+//            txt.inputAccessoryView = toolBar
+//            txt.resignFirstResponder()
+//        }else if(txt.tag == 2){
+//            txt.inputView = datePicker
+//            txt.inputAccessoryView = toolBar
+//            txt.resignFirstResponder()
+//            //showDatePicker()
+//        }
 
     }
     
@@ -302,6 +401,16 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
             self.dateTxt.text = formater.string(from: dateMatch!)
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(updateMatch))
+            
+            Alamoquest.getCompoForMatch(idMatch: match.id ?? 0, idTeam: idteam) { (compoH) in
+                self.lblCompo.text = "Choix de la composition : " + (compoH.name ?? "")
+                for compo in self.compoArray{
+                    if(compo.name == compoH.name){
+                        self.composSelected = compo
+                        break
+                    }
+                }
+            }
         }
         
 
@@ -325,12 +434,17 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
             self.idCompet = 3
         }
         
+  
+        
 
         
         //if (self.mode)
     }
     
     @objc func updateMatch(){
+        if(self.composSelected.id ?? 0 == 0){
+            return
+        }
         var match = Match()
         match.id = self.matchUpdate.id
         match.tournament = Competition()
@@ -359,9 +473,19 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
 
         match.date = dateString
         
-        Alamoquest.updateMatch(match: match) { (match) in
+        Alamoquest.updateMatch(match: match) { (matchRetour) in
             print("SUCESS : \(match)")
-            self.navigationController?.popViewController(animated: true)
+            let compoH = CompositionHistory()
+            compoH.match = match
+            compoH.team = Team.getTeam(teams: self.teamsTable, id: idTeam)
+            compoH.name = self.composSelected.name
+            print(compoH.toJsonCreate())
+            Alamoquest.postComposHistory(compo: compoH, completionHandler: { (response) in
+                if(response){
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+            
         }
         
         
@@ -401,15 +525,18 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         if(dateTxt.text == "" && self.versusTeamTxt.text == ""){
             return
         }
+        if(self.composSelected.id ?? 0 == 0){
+            return
+        }
         let idTeam = UserDefaults.standard.integer(forKey: "team")
         var match = Match()
         match.tournament = Competition()
         match.tournament.id = self.idCompet
         if(self.switchLieu.isOn){
-            match.home = self.teamVs
+            match.home = self.teamsTable[self.pickerRef.selectedRow(inComponent: 0)]
             match.away = Team.getTeam(teams: self.teamsTable, id: idTeam)
         }else{
-            match.away = self.teamVs
+            match.away = self.teamsTable[self.pickerRef.selectedRow(inComponent: 0)]
             match.home = Team.getTeam(teams: self.teamsTable, id: idTeam)
         }
         let formater = DateFormatter()
@@ -431,7 +558,18 @@ class CalendrierCreateViewController: UIViewController, UIPickerViewDelegate, UI
         print(tt)
         Alamoquest.postMatch(match: match) { (match) in
             print("SUCESS : \(match)")
-            self.navigationController?.popViewController(animated: true)
+            let compoH = CompositionHistory()
+            compoH.match = match
+            compoH.team = Team.getTeam(teams: self.teamsTable, id: idTeam)
+            compoH.name = self.composSelected.name
+            print(compoH.toJSON())
+            Alamoquest.postComposHistory(compo: compoH, completionHandler: { (response) in
+                if(response){
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+            
+            
         }
         
     }

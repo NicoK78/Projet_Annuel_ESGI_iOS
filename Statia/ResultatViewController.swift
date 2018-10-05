@@ -15,10 +15,10 @@ class ResultatViewController: UIViewController, UITableViewDelegate , UITableVie
     let choice = ["Amical","Championnat","Coupe"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        self.tableView.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
 
@@ -41,6 +41,10 @@ class ResultatViewController: UIViewController, UITableViewDelegate , UITableVie
         let cell = UITableViewCell()
         
         cell.textLabel?.text = self.choice[indexPath.section]
+        
+        cell.backgroundColor = .clear//UIColor(red: 93/255, green: 176/255, blue: 213/255, alpha: 1.0)
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     

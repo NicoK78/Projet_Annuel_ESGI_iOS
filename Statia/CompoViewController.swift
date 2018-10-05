@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ViewAnimator
+
 
 class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,6 +21,8 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.dataSource = self
         self.tableView.delegate = self
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blue.jpg")!)
 
 
     }
@@ -43,29 +47,50 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         txt.text = "Selom"
         
         cell.contentView.addSubview(txt)
-        
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var idTeam = UserDefaults.standard.integer(forKey: "team")
+        let cell = tableView.cellForRow(at: indexPath)
+        let animation = AnimationType.zoom(scale: 0.5)
+        cell?.animate(animations: [animation],completion: {
+            var idTeam = UserDefaults.standard.integer(forKey: "team")
+            
+            var compo = self.compoArray[indexPath.row]
+            let compoController = CompositionViewController()
+            compoController.compo = compo
+            self.navigationController?.pushViewController(compoController, animated: true)
+        })
         
-        var compo = self.compoArray[indexPath.row]
-        let compoController = CompositionViewController()
-        compoController.compo = compo
-        self.navigationController?.pushViewController(compoController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            Alamoquest.deleteCompo(compo: self.compoArray[indexPath.row], completionHandler: { (response) in
-                self.compoArray.remove(at: indexPath.row)
-                self.tableView.reloadData()
-            })
+            let alert = UIAlertController(title: "Suppression", message: "Êtes vous sûr ?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { (UIAlertAction) in
+                Alamoquest.deleteCompo(compo: self.compoArray[indexPath.row], completionHandler: { (response) in
+                    self.compoArray.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                })
+            }))
+            self.present(alert, animated: true)
+
             
         }
         
         return [delete]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if(UserDefaults.standard.integer(forKey: "profil") > 1){
+            return false
+        }
+        return true
     }
     
     @objc func createCompo(){
@@ -178,6 +203,15 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
             print(compo.toJsonCreate())
             Alamoquest.postComposition(compo: compo) { (compo) in
+                if (compo.name == ""){
+                    let alert = UIAlertController(title: "Attention", message:"Changer le nom de la composition.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    return
+                }
                 print("Sucess : \(compo.toJsonCreate())")
                 create.compo = compo
                 self.navigationController?.pushViewController(create, animated: true)
@@ -191,7 +225,10 @@ class CompoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(alert, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createCompo))
+        if(UserDefaults.standard.integer(forKey: "profil") == 1){
+            self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createCompo))
+        }
+
         self.compoArray.removeAll()
         self.composDefaut.removeAll()
         let idTeam = UserDefaults.standard.integer(forKey: "team")

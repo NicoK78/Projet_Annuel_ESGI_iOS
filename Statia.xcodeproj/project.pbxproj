@@ -100,6 +100,7 @@
 		7998195120FE936500FE1247 /* StatsMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998195020FE936400FE1247 /* StatsMatch.swift */; };
 		7998195320FE940D00FE1247 /* StatsMatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998195220FE940D00FE1247 /* StatsMatchInfo.swift */; };
 		7998195520FE946400FE1247 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998195420FE946400FE1247 /* Categorie.swift */; };
+		799BF71F21656E5B00AA839C /* CompositionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799BF71E21656E5B00AA839C /* CompositionHistory.swift */; };
 		79A8F272215C3EA20060A6BA /* JSONArrayEnconding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8F271215C3EA20060A6BA /* JSONArrayEnconding.swift */; };
 		79AA61E820C1FB0A00665B3C /* EffectifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */; };
 		79AA61E920C1FB0A00665B3C /* EffectifViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */; };
@@ -228,6 +229,7 @@
 		7998195020FE936400FE1247 /* StatsMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMatch.swift; sourceTree = "<group>"; };
 		7998195220FE940D00FE1247 /* StatsMatchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMatchInfo.swift; sourceTree = "<group>"; };
 		7998195420FE946400FE1247 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		799BF71E21656E5B00AA839C /* CompositionHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionHistory.swift; sourceTree = "<group>"; };
 		79A8F271215C3EA20060A6BA /* JSONArrayEnconding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONArrayEnconding.swift; sourceTree = "<group>"; };
 		79AA61E620C1FB0A00665B3C /* EffectifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectifViewController.swift; sourceTree = "<group>"; };
 		79AA61E720C1FB0A00665B3C /* EffectifViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectifViewController.xib; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				7998195420FE946400FE1247 /* Categorie.swift */,
 				79EF981620FEA59A00D0294E /* StatsInfo.swift */,
 				79165A6021528FA000657907 /* Users.swift */,
+				799BF71E21656E5B00AA839C /* CompositionHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				032156C720CF1BC800441586 /* SeasonResultsTableViewCell.swift in Sources */,
 				79A8F272215C3EA20060A6BA /* JSONArrayEnconding.swift in Sources */,
 				7989493F20F8F1FE00FFEC88 /* Competition.swift in Sources */,
+				799BF71F21656E5B00AA839C /* CompositionHistory.swift in Sources */,
 				7948CD4D20D491FE00B053B1 /* TableViewCellCalendrier.swift in Sources */,
 				7998194F20FA330E00FE1247 /* CompositionDetails.swift in Sources */,
 				7928F45920EB8466005EA8CB /* Club.swift in Sources */,

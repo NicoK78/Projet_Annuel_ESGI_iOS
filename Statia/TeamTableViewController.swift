@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class TeamTableViewController: UITableViewController {
     
@@ -35,6 +36,8 @@ class TeamTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        self.tableView.backgroundColor = .clear
+        print("\(UserDefaults.standard.integer(forKey: "profil"))")
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +50,9 @@ class TeamTableViewController: UITableViewController {
         let barbutton = UIBarButtonItem(image: UIImage(named: "logout.png"), style: .done, target: self, action: #selector(Deconnect))
         self.tabBarController?.navigationItem.leftBarButtonItem = barbutton //UIBarButtonItem(title: "Deco", style: .done, target: self, action: #selector(Deconnect))
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        
+         let zoomAnimation = AnimationType.zoom(scale: 0.5)
+         UIView.animate(views: self.tableView.visibleCells, animations: [zoomAnimation], duration: 0.3)
     }
     
 
@@ -75,6 +81,9 @@ class TeamTableViewController: UITableViewController {
         
         cell.villeEquipe.text = self.teamsTable[indexPath.row].league.name
         cell.nomEquipe.text =  self.teamsTable[indexPath.row].name
+        
+        cell.backgroundColor = .clear//UIColor(red: 93/255, green: 176/255, blue: 213/255, alpha: 1.0)
+        cell.selectionStyle = .none
         
         return cell
     }
