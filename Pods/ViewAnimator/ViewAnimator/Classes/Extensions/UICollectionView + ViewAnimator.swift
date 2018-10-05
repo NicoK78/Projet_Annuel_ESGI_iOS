@@ -9,10 +9,26 @@ import Foundation
 import UIKit
 
 public extension UICollectionView {
+<<<<<<< HEAD
 
     /// VisibleCells in the order they are displayed on screen.
     var orderedVisibleCells: [UICollectionViewCell] {
         return indexPathsForVisibleItems.sorted().compactMap { cellForItem(at: $0) }
+=======
+    
+    /// Checks for the IndexPath of a UICollectionView cell.
+    ///
+    /// - Parameter cell: Cell to check it's path.
+    /// - Returns: Item position.
+    private func indexPathFor(cell: UICollectionViewCell) -> Int {
+        return indexPath(for: cell)?.item ?? -1
+    }
+
+    /// VisibleCells in the order they are displayed on screen.
+    var orderedVisibleCells: [UICollectionViewCell] {
+        let items = visibleCells
+        return items.sorted(by: { indexPathFor(cell: $1) > indexPathFor(cell: $0) })
+>>>>>>> dev_test
     }
 
     /// Gets the currently visibleCells of a section.

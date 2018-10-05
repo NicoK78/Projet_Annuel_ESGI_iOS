@@ -42,7 +42,13 @@ public class Alamoquest{
                 if(json != false){
                     let idclub = json["team"]["club"]["idclub"].int
                     let nameclub = json["team"]["club"]["name"].string
-
+                    let profil = json["idplayer"].int ?? 0
+                    if( profil > 0){
+                        UserDefaults.standard.set(2, forKey: "profil")
+                        UserDefaults.standard.set(profil, forKey: "idplayer")
+                    }else{
+                        UserDefaults.standard.set(1, forKey: "profil")
+                    }
                     UserDefaults.standard.set(idclub, forKey: "idclub")
                     UserDefaults.standard.set(nameclub, forKey: "nameclub")
                 }
@@ -276,5 +282,31 @@ public class Alamoquest{
             }
         }
     }
+    class func getCompoForMatch(idMatch:Int, idTeam:Int, completionHandler: @escaping (_ compoHistory: CompositionHistory) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/getcomposformatch/\(idMatch)/\(idTeam)").responseObject { (response: DataResponse<CompositionHistory>) in
+            let compoH = response.result.value
+            if let compoH = compoH {
+                completionHandler(compoH)
+            }
+        }
+    }
+    
+    
+    class func postComposHistory(compo:CompositionHistory, completionHandler: @escaping (_ retour:Bool) -> Void) {
+        Alamofire.request("http://localhost:8000/api/compositionhistory/", method: .post, parameters: compo.toJsonCreate(), encoding: URLEncoding.httpBody).response { (response) in
+            completionHandler(true)
+        }
+    }
+    
+    
+    class func getComposDetailsHistoryByCompo(idcompo:Int, completionHandler: @escaping (_ postes: [CompositionDetails]) -> Void) {
+        Alamofire.request("http://127.0.0.1:8000/api/getcomposdetailshistory/\(idcompo)").responseArray { (response: DataResponse<[CompositionDetails]>) in
+            let compoDetails = response.result.value
+            if let compoDetails = compoDetails {
+                completionHandler(compoDetails)
+            }
+        }
+    }
+    
 }
 

@@ -35,8 +35,8 @@ class Player :  Mappable {
     func toJSON() -> [String: Any] {
         return [
             "position": poste as String,
-            "foot" : strongFoot as String,
-            "phone" : mobile as String,
+            "foot" : strongFoot ?? "" as String,
+            "phone" : mobile ?? "" as String,
             "mail" : user.email as String,
             "team" : team.id as Int,
             "first_name" : user.firstname as String,

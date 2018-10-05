@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import ViewAnimator
 
 class CompositionViewController: UIViewController , UITableViewDelegate , UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource  {
 
@@ -41,17 +42,19 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.isEditing = true
+        self.tableView.alpha = 0.0
         //self.tableView.register(UINib(nibName:"TitreCompoTableViewCell",bundle:nil), forCellReuseIdentifier: "titreCompo")
+        if(UserDefaults.standard.integer(forKey: "profil") > 1){
+            self.tableView.isEditing = false
+            
+        }
         
         self.tableView.register(UINib(nibName:"CompoTableViewCell",bundle:nil), forCellReuseIdentifier: "compoCell")
-        let btnItem = UIBarButtonItem(title: "Sauvegarder", style: .plain, target: self, action: #selector(saveCompositionDetail))
-        self.navigationItem.rightBarButtonItem = btnItem
-        
-        //self.viewField.backgroundColor = UIColor(patternImage: UIImage(named: "field.png")!)
-        //self.collectionView.backgroundColor = UIColor(patternImage: UIImage(named: "field.png")!)
+//        let btnItem = UIBarButtonItem(title: "Sauvegarder", style: .plain, target: self, action: #selector(saveCompositionDetail))
+//        self.navigationItem.rightBarButtonItem = btnItem
         
         // Do any additional setup after loading the view.
-        print("\(self.compo.team.name) \(self.compo.name)")
+
 
         let idTeam = UserDefaults.standard.integer(forKey: "team")
         Alamoquest.getPlayerByTeam(id: idTeam) { (players) in
@@ -103,7 +106,8 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
                 Alamofire.request(request).responseJSON(completionHandler: { (response) in
                     print(response)
                 })
-
+                
+                self.tableView.alpha = 1.0
                 
 
             }
@@ -122,6 +126,8 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
                     
                 }
                 self.tableView.reloadData()
+                let animation = AnimationType.from(direction: .right, offset: 100.0)
+                self.tableView.animate(animations: [animation],initialAlpha: 0.0, finalAlpha: 1.0)
             }
         }
         
@@ -182,6 +188,7 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellCompo = initBtn(tableView: tableView,indexPath: indexPath)
+        
         //cellCompo.dGaucheBtn.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         
         
@@ -190,6 +197,12 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
            
         }*/
         let cellTeam =  UITableViewCell(style: .default, reuseIdentifier: "cellTeam")
+        cellTeam.selectionStyle = .none
+        if(UserDefaults.standard.integer(forKey: "profil") > 1){
+            cellCompo.isUserInteractionEnabled = false
+//            cellTeam.isUserInteractionEnabled = false
+//            cellTeam.textLabel?.textColor = .black
+        }
         
         switch (indexPath.section) {
         case 0:
@@ -401,13 +414,7 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
          let cellCompo =  tableView.cellForRow(at: indexPath) as! CompoTableViewCell
          //UIImageWriteToSavedPhotosAlbum(cellCompo.capture(), nil, nil, nil)
          }*/
-        let index = IndexPath(row: 0, section: 0)
-        let cell = self.tableView.cellForRow(at: index) as! CompoTableViewCell
-        for subview in cell.viewHolder.subviews{
-            if var button = subview as? UIButton {
-                button.backgroundColor = UIColor.black
-            }
-        }
+
         switch (indexPath.section) {
         case 0:
             return
@@ -479,8 +486,13 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
 
     }
     
+
+    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if(UserDefaults.standard.integer(forKey: "profil") > 1){
+            return false
+        }
         switch (indexPath.section) {
         case 0:
             return false
@@ -865,6 +877,8 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
                                 self.playersArraySub.remove(at: index)
                                 self.tableView.reloadData()
                                 picker.reloadAllComponents()
+        
+                         
                             })
                             break
                         }
@@ -949,9 +963,15 @@ class CompositionViewController: UIViewController , UITableViewDelegate , UITabl
                     compoD.player = nil
                     Alamoquest.postCompositionDetails(compo: compoD) { (compoD) in
                         self.playerArrayPicker.append(tempPlayer)
+                        for (index, playerC) in self.playersArrayPlay.enumerated(){
+                            if(playerC.player?.user.id == self.textField.tag){
+                                self.playersArrayPlay.remove(at: index)
+                            }
+                        }
                         self.tableView.reloadData()
                         self.pickerView.reloadComponent(0)
                         self.textField.text = ""
+                        self.dismiss(animated: true, completion: nil)
                         return
                     }
                 }

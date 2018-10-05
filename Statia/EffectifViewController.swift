@@ -24,7 +24,7 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
 
         self.tableViewEffectif.register(UINib(nibName:"TableViewCellEffectif",bundle:nil), forCellReuseIdentifier: "EffectifCell")
         //self.tableView.register(EffectifTableViewCell.self, forCellReuseIdentifier: "EffectifCell")
-        
+        self.tableViewEffectif.backgroundColor = UIColor.clear
     }
     
     
@@ -136,6 +136,10 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
 
         //cell = EffectifTableViewCell(style: .default, reuseIdentifier: "EffectifCell")
         //let cell = UITableViewCell(style: .default, reuseIdentifier: "EffectifTableViewCell")
+//        let zoomAnimation = AnimationType.zoom(scale: 0.5)
+//        cell.animate(animations: [zoomAnimation], duration: 0.3)
+        cell.backgroundColor = .clear//UIColor(red: 93/255, green: 176/255, blue: 213/255, alpha: 1.0)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -187,7 +191,10 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
     override func viewWillAppear(_ animated: Bool) {
         self.tableViewEffectif.isHidden = true
         self.playersTab.removeAll()
-        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlayer))
+        if(UserDefaults.standard.integer(forKey: "profil") == 1){
+            self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlayer))
+        }
+
         print(UserDefaults.standard.integer(forKey: "team"))
         let idTeam = UserDefaults.standard.integer(forKey: "team")
         Alamoquest.getPlayerByTeam(id: idTeam) { (players) in
@@ -199,15 +206,78 @@ class EffectifViewController: UIViewController , UITableViewDelegate , UITableVi
             self.tableViewEffectif.reloadData()
             self.tableViewEffectif.isHidden = false
             let cells = self.tableViewEffectif.visibleCells
-            let zoomAnimation = AnimationType.zoom(scale: 0.5)
             let fromAnimation = AnimationType.from(direction: .right, offset: 60.0)
+             let zoomAnimation = AnimationType.zoom(scale: 0.5)
             UIView.animate(views: cells, animations: [zoomAnimation], duration: 0.3)
             
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        
+        let headerLabel = UILabel(frame: CGRect(x: 30, y: 15, width:
+            tableView.bounds.size.width, height: tableView.bounds.size.height))
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        headerLabel.textColor = UIColor.black
+        headerLabel.text = self.tableView(self.tableViewEffectif, titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        headerView.addSubview(headerLabel)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (UserDefaults.standard.integer(forKey: "profil") > 1){
+            var playerTabTemp = [Player]()
+            
+            switch indexPath.section {
+            case 0:
+                for player in self.playersTab {
+                    if(player.poste.starts(with: "Gardien")){
+                        playerTabTemp.append(player)
+                    }
+                }
+                
+            case 1:
+                for player in self.playersTab {
+                    if(player.poste.starts(with: "Défenseur")){
+                        playerTabTemp.append(player)
+                    }
+                }
+                
+            case 2:
+                for player in self.playersTab {
+                    if(player.poste.starts(with: "Milieu")){
+                        playerTabTemp.append(player)
+                    }
+                }
+                
+            case 3:
+                for player in self.playersTab {
+                    if(player.poste.starts(with: "Attaquant")){
+                        playerTabTemp.append(player)
+                    }
+                }
+                
+            default:
+                break
+            }
+            print("\(playerTabTemp[indexPath.row].id ) \(UserDefaults.standard.integer(forKey: "idplayer"))")
+            if(playerTabTemp[indexPath.row].id == UserDefaults.standard.integer(forKey: "idplayer")){
+                return true
+            }else{
+                return false
+            }
+        }else{
+            return true
+        }
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         var playerTabTemp = [Player]()
+
         switch indexPath.section {
         case 0:
             for player in self.playersTab {

@@ -125,9 +125,9 @@ class PlayerCreateV2ViewController: UIViewController , UITableViewDelegate , UIT
                     formater.dateFormat = "yyyy-MM-dd"
                     formater.timeZone = TimeZone(abbreviation: "GMT")
                     
-                    var dateTemp = formater.date(from: self.player.birhtDate)
+                    var dateTemp = formater.date(from: self.player.birhtDate ?? "")
                     
-                    self.datePicker.date = dateTemp!
+                    self.datePicker.date = dateTemp ?? Date()
                     
                 }
                 self.datePicker.maximumDate = Date()
@@ -412,12 +412,12 @@ class PlayerCreateV2ViewController: UIViewController , UITableViewDelegate , UIT
                     formater.locale = Locale(identifier: "FR-fr")
                     formater.dateFormat = "yyyy-MM-dd"
                     
-                    let dateTemp = formater.date(from: self.player.birhtDate)
+                    let dateTemp = formater.date(from: self.player.birhtDate ?? "")
                     
                     formater.dateStyle = DateFormatter.Style.long
                     formater.timeStyle = DateFormatter.Style.none
                 
-                    cell.textField.text = formater.string(from: dateTemp!)
+                    cell.textField.text = formater.string(from: dateTemp ?? Date())
                     //self.player.birhtDate = cell.textField.text
                     break
                 case 3:

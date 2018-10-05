@@ -6,7 +6,11 @@ PODS:
   - GTProgressBar (0.3.0)
   - ObjectMapper (3.3.0)
   - SwiftyJSON (4.1.0)
+<<<<<<< HEAD
   - ViewAnimator (2.1.2)
+=======
+  - ViewAnimator (2.1.1)
+>>>>>>> dev_test
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -30,7 +34,11 @@ SPEC CHECKSUMS:
   GTProgressBar: de0d8b060255025b590c9a2fe55846394a674de0
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+<<<<<<< HEAD
   ViewAnimator: 20df9a24a076c6ee78b77a4dbf1943808c94954e
+=======
+  ViewAnimator: 43c31539508d995ea2c5e98338211f7c009b358f
+>>>>>>> dev_test
 
 PODFILE CHECKSUM: eef66eb97b774881f2f678efe1466ed69c34958b
 

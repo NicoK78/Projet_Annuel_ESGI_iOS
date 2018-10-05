@@ -41,10 +41,10 @@ class Match : Mappable {
     
     func toJsonCreate() -> [String: Any] {
         return [
-            "home": home.id as Any,
-            "away": away.id as Any,
-            "tournament": tournament.id as Any,
-            "date" : date as Any
+            "home": home.id ?? "" as Any,
+            "away": away.id ?? ""as Any,
+            "tournament": tournament.id ?? "" as Any,
+            "date" : date ?? "" as Any
         ]
     }
     
@@ -56,6 +56,7 @@ class Match : Mappable {
     var day : Int?
     var homeGoal :Int!
     var awayGoal: Int!
+    
     
     
     

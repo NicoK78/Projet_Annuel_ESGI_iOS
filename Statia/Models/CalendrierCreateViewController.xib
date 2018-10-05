@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,13 @@
                 <outlet property="btnAmical" destination="mcJ-Je-cGe" id="yFg-WM-ghd"/>
                 <outlet property="btnChampionnat" destination="YbD-Ao-jgy" id="Z7n-oV-OBq"/>
                 <outlet property="btnCoupe" destination="S02-44-WVG" id="6Rq-OQ-hHv"/>
-                <outlet property="datePicker" destination="9ec-Tf-wav" id="DSQ-Sk-PR6"/>
                 <outlet property="dateTxt" destination="XuU-pu-YHH" id="ehu-Dx-bKW"/>
                 <outlet property="labelDomicile" destination="gQn-EE-HDz" id="ZBi-zi-Y2q"/>
                 <outlet property="labelExterieur" destination="Qr6-BE-8DX" id="okK-Yw-VOv"/>
+                <outlet property="lblCompo" destination="Ftq-SR-f4T" id="UVn-ZN-yzS"/>
                 <outlet property="lblDay" destination="sJi-eN-FsO" id="5Fx-hf-dca"/>
-                <outlet property="pickerView" destination="4g9-Ya-Xge" id="JDB-Ud-fdW"/>
                 <outlet property="switchLieu" destination="3gb-oD-ftc" id="tRq-Bk-fqG"/>
+                <outlet property="tableView" destination="rpi-cx-86v" id="qgq-vx-peY"/>
                 <outlet property="txtFDay" destination="CRz-gg-CJS" id="6GC-U4-MQh"/>
                 <outlet property="versusTeamTxt" destination="lJz-sH-1hP" id="yUo-O3-k7r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,7 +39,6 @@
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="editVersusTeam:" destination="-1" eventType="touchDown" id="Wph-9I-yHm"/>
-                        <action selector="endEditTeam:" destination="-1" eventType="editingDidEnd" id="5eP-ar-iL5"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-pu-YHH">
@@ -48,7 +48,6 @@
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="editVersusTeam:" destination="-1" eventType="touchDown" id="xSE-if-0CW"/>
-                        <action selector="endEditTeam:" destination="-1" eventType="editingDidEnd" id="cUW-ZY-6m1"/>
                     </connections>
                 </textField>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gb-oD-ftc">
@@ -73,7 +72,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbD-Ao-jgy">
-                    <rect key="frame" x="141" y="301" width="92" height="30"/>
+                    <rect key="frame" x="141.5" y="301" width="92" height="30"/>
                     <state key="normal" title="Championnat">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
@@ -84,19 +83,6 @@
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-Ya-Xge">
-                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                </pickerView>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Tf-wav">
-                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                    <date key="date" timeIntervalSinceReferenceDate="553137949.50606799">
-                        <!--2018-07-13 01:25:49 +0000-->
-                    </date>
-                    <locale key="locale" localeIdentifier="fr"/>
-                    <connections>
-                        <action selector="endEditTeam:" destination="-1" eventType="touchDragExit" id="rCo-aw-ipj"/>
-                    </connections>
-                </datePicker>
                 <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRz-gg-CJS">
                     <rect key="frame" x="175" y="341" width="25" height="30"/>
                     <nil key="textColor"/>
@@ -109,6 +95,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rpi-cx-86v">
+                    <rect key="frame" x="0.0" y="425" width="375" height="200.5"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdz-L7-YP9">
+                    <rect key="frame" x="127.5" y="401" width="120.5" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choix de la composition : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftq-SR-f4T">
+                    <rect key="frame" x="15" y="630.5" width="207.5" height="21.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -116,6 +119,7 @@
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3l5-BX-wLM"/>
                 <constraint firstItem="3gb-oD-ftc" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="45" id="4CN-94-1a7"/>
                 <constraint firstItem="YbD-Ao-jgy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Fv-zY-G1w"/>
+                <constraint firstItem="Rdz-L7-YP9" firstAttribute="top" secondItem="CRz-gg-CJS" secondAttribute="bottom" constant="30" id="7Ix-IG-hFg"/>
                 <constraint firstItem="3gb-oD-ftc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="83X-Qt-vtY"/>
                 <constraint firstItem="YbD-Ao-jgy" firstAttribute="top" secondItem="3gb-oD-ftc" secondAttribute="bottom" constant="55" id="8ce-D2-1Vj"/>
                 <constraint firstItem="CRz-gg-CJS" firstAttribute="top" secondItem="YbD-Ao-jgy" secondAttribute="bottom" constant="10" id="9Cf-LI-K3X"/>
@@ -124,25 +128,26 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qr6-BE-8DX" secondAttribute="trailing" constant="50" id="Dwu-sl-wSA"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="EQg-eH-ZDQ"/>
                 <constraint firstItem="CRz-gg-CJS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ekl-YD-JQ5"/>
-                <constraint firstItem="9ec-Tf-wav" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HLm-T4-pgU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ftq-SR-f4T" secondAttribute="bottom" constant="15" id="FfL-7L-Y8A"/>
+                <constraint firstItem="Rdz-L7-YP9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IAW-gx-xjp"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="top" secondItem="lJz-sH-1hP" secondAttribute="bottom" constant="40" id="M6Z-Z6-MGL"/>
-                <constraint firstItem="4g9-Ya-Xge" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Rgl-Ao-6az"/>
+                <constraint firstItem="rpi-cx-86v" firstAttribute="top" secondItem="Rdz-L7-YP9" secondAttribute="bottom" id="NBZ-Hq-bii"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lJz-sH-1hP" secondAttribute="trailing" id="SHV-Xf-n0W"/>
-                <constraint firstItem="9ec-Tf-wav" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WOy-6g-SCG"/>
                 <constraint firstItem="gQn-EE-HDz" firstAttribute="top" secondItem="XuU-pu-YHH" secondAttribute="bottom" constant="50" id="Xfr-le-6zr"/>
-                <constraint firstItem="9ec-Tf-wav" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z8s-Ab-2pF"/>
                 <constraint firstItem="mcJ-Je-cGe" firstAttribute="top" secondItem="Qr6-BE-8DX" secondAttribute="bottom" constant="60" id="b5w-YL-DXK"/>
                 <constraint firstItem="lJz-sH-1hP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVu-qV-fYY"/>
-                <constraint firstItem="4g9-Ya-Xge" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dcD-0Q-MiJ"/>
-                <constraint firstItem="4g9-Ya-Xge" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fNt-dc-wOG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mcJ-Je-cGe" secondAttribute="trailing" constant="65" id="gGE-gG-LVx"/>
+                <constraint firstItem="Ftq-SR-f4T" firstAttribute="top" secondItem="rpi-cx-86v" secondAttribute="bottom" constant="5" id="hgb-lM-nXk"/>
+                <constraint firstItem="rpi-cx-86v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="izX-uL-Z8R"/>
                 <constraint firstItem="XuU-pu-YHH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mTw-hc-pGk"/>
                 <constraint firstItem="S02-44-WVG" firstAttribute="top" secondItem="gQn-EE-HDz" secondAttribute="bottom" constant="60" id="oup-4i-eVS"/>
+                <constraint firstItem="Ftq-SR-f4T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="qWS-Gv-4Xy"/>
                 <constraint firstItem="sJi-eN-FsO" firstAttribute="top" secondItem="YbD-Ao-jgy" secondAttribute="bottom" constant="14" id="un1-gW-Ztz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rpi-cx-86v" secondAttribute="trailing" id="yaF-rA-4TG"/>
                 <constraint firstItem="CRz-gg-CJS" firstAttribute="leading" secondItem="sJi-eN-FsO" secondAttribute="trailing" constant="10" id="zTu-cX-pOq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="33.5" y="82.5"/>
+            <point key="canvasLocation" x="32.799999999999997" y="82.3088455772114"/>
         </view>
     </objects>
 </document>
